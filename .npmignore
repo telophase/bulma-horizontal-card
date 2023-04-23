@@ -1,0 +1,29 @@
+# don't commit documentation
+/hugo
+/hugo/**
+/docs
+/docs/**
+
+# don't commit pipelines
+.onedev-buildspec.yml
+
+# dont commit anything in the gitignore
+# ---> NPM
+node_modules/
+jspm_packages/
+build/
+
+# ---> Hugo
+# Generated files by hugo
+/hugo/public/
+/hugo/resources/_gen/
+/hugo/assets/jsconfig.json
+/hugo/hugo_stats.json
+
+# Executable may be added to repository
+/hugo/hugo.exe
+/hugo/hugo.darwin
+/hugo/hugo.linux
+
+# Temporary lock file while building
+/hugo/.hugo_build.lock
