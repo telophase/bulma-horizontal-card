@@ -1,8 +1,8 @@
 <div align="center">
 <img src="hugo/static/hcard.png" style="max-width: 80%;">
 <h1>bulma-horizontal-card</h1>
-<p> <a href="https://www.npmjs.com/package/@telophase/bulma-horizontal-divider"><img src="https://img.shields.io/npm/v/@telophase/bulma-horizontal-divider" alt="npm"></a>
-<a href="https://www.npmjs.com/package/@telophase/bulma-horizontal-divider"><img src="https://img.shields.io/npm/dw/@telophase/bulma-horizontal-card" alt="npm downloads"></a> <a href="https://ko-fi.com/gimon"><img src="https://img.shields.io/static/v1?label=support&amp;color=blueviolet&amp;message=@%20ko-fi&amp;logo=ko-fi" alt="support development"></a></p>
+<p> <a href="https://www.npmjs.com/package/@telophase/bulma-horizontal-card"><img src="https://img.shields.io/npm/v/@telophase/bulma-horizontal-card" alt="npm"></a>
+<a href="https://www.npmjs.com/package/@telophase/bulma-horizontal-card"><img src="https://img.shields.io/npm/dw/@telophase/bulma-horizontal-card" alt="npm downloads"></a> <a href="https://ko-fi.com/gimon"><img src="https://img.shields.io/static/v1?label=support&amp;color=blueviolet&amp;message=@%20ko-fi&amp;logo=ko-fi" alt="support development"></a></p>
 <p>
 </div>
 
@@ -10,7 +10,7 @@ A [Bulma CSS](https://github.com/jgthms/bulma) extension to support horizontal c
 
 Built for the latest version of Bulma (0.9.4)! You'll need it in order for this code to work.
 
-**Documentation, installation instructions, and demonstrations can be found here: https://dev.gimon.zone/bulma-horizontal-card/~site**.
+**Documentation, installation instructions, and demonstrations can be found here: https://dev.gimon.zone/bulma-horizontal-card/~site**. [**CURRENTLY BEING WRITTEN**]
 
 
 ## important notice!
