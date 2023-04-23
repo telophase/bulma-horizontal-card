@@ -1,0 +1,9 @@
+baseURL = 'https://dev.gimon.zone/bulma-horizontal-card/~site'
+languageCode = 'en-us'
+title = 'bulma-horizontal-card documentation'
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2

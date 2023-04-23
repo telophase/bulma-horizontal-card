@@ -1,13 +1,13 @@
+{{ define "main" }}
 {{ if not .Params.notoc }}
-<aside>
-  <header>
-    <a href="#{{ .Title | urlize }}">
-    <h3>{{ .Title }}</h3>
-    </a>
-  </header>
+<aside class="content is-pulled-right box ml-5" style="max-width: 20rem">
+	<b>Table of Contents</b>
   {{ .TableOfContents }}
 </aside>
 <a href="#" id="toc-toggle"></a>
 {{ end }}
-
-{{ .Title }}
+<div class="content">
+<p class="title">{{ .Title }}</p>
+{{ .Content }}
+</div>
+{{ end }}

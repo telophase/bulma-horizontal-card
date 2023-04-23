@@ -1,6 +1,5 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
 <div class="card is-horizontal">
-  <div class="card">
     {{ with .Get "outline-header" }}
     <header class="card-header">
       <p class="card-header-title">Card header</p>
@@ -48,8 +47,7 @@
       </div>
 
       <div class="content">
-        {{ if eq .Page.File.Ext "md" }} {{ .Inner | markdownify }} {{ else }} {{
-        .Inner | htmlUnescape | safeHTML }} {{ end }}
+        {{ .Inner | markdownify }}
       </div>
       {{ with .Get "inline-footer" }}
       <footer class="card-footer">
