@@ -1,0 +1,45 @@
+version: 21
+jobs:
+- name: Build CSS
+  steps:
+  - !CheckoutStep
+    name: Checkout
+    cloneCredential: !HttpCredential
+      accessTokenSecret: access-token
+    withLfs: false
+    withSubmodules: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  - !CommandStep
+    name: Build and Minify CSS
+    runInContainer: true
+    image: node:20-buster-slim
+    interpreter: !DefaultInterpreter
+      commands:
+      - npm install
+      - npm run css-build
+      - npm run css-min
+    useTTY: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  - !CommandStep
+    name: Push build artifacts to repository
+    runInContainer: true
+    image: alpine/git
+    interpreter: !DefaultInterpreter
+      commands:
+      - git config --global user.name "Lil' Seb"
+      - git config --global user.email "devbot@@gimon.zone"
+      - git fetch origin main:main
+      - git checkout main
+      - git add css
+      - 'git commit -m "CI Job #@build_number@: build CSS"'
+      - git push origin main:main
+    useTTY: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  triggers:
+  - !BranchUpdateTrigger
+    paths: sass/**
+    projects: bulma-horizontal-card
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
+  timeout: 3600
