@@ -15,7 +15,7 @@ jobs:
     image: node:20-buster-slim
     interpreter: !DefaultInterpreter
       commands:
-      - npm install
+      - npm install --only=dev
       - npm run css-build
       - npm run css-min
     useTTY: false
