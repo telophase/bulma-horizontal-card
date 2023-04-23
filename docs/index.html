@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="generator" content="Hugo 0.111.3">
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bulma-horizontal-card - </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card@1.0.0/css/bulma-horizontal-card.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+  </head>
+  <body>
+  <section class="section">
+  	<div class="columns">
+  		<div class="column is-2">
+  		  <aside class="menu">
+ <ul class="menu-list">
+ 
+  <li><a href="/bulma-horizontal-card/~site/"><span class="icon-text">
+    
+    <span>Home</span>
+  </span></a></li>
+  
+  <li><a href="/bulma-horizontal-card/~site/install"><span class="icon-text">
+    
+    <span>Installation</span>
+  </span></a></li>
+  
+  <li><a href="/bulma-horizontal-card/~site/usage"><span class="icon-text">
+    
+    <span>How to Use</span>
+  </span></a></li>
+  
+  <li><a href="/bulma-horizontal-card/~site/customize"><span class="icon-text">
+    
+    <span>Customize</span>
+  </span></a></li>
+  
+  <li><a href="https://github.com/telophase/bulma-horizontal-card"><span class="icon-text">
+    
+    <span class="icon">
+      <i class="fa fa-github Repo "></i>
+    </span>
+    
+    <span>Github</span>
+  </span></a></li>
+  
+  <li><a href="https://dev.gimon.zone/bulma-horizontal-card/~files"><span class="icon-text">
+    
+    <span class="icon">
+      <i class="fa fa-git "></i>
+    </span>
+    
+    <span>Local Repo</span>
+  </span></a></li>
+  
+ </ul>
+</aside>
+        <hr>
+        
+<aside class="content">
+	<b>Table of Contents</b>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#notices">notices</a></li>
+    <li><a href="#contributing">contributing</a></li>
+    <li><a href="#license">license</a></li>
+  </ul>
+</nav>
+</aside>
+
+  		</div>
+  		<div class="column is-9">
+    <nav class="breadcrumb is-small" aria-label="breadcrumbs">
+  <ul>
+    
+     <li class="is-active">
+       <a aria-current="page" href="https://dev.gimon.zone/bulma-horizontal-card/~site/">bulma-horizontal-card</a>
+    </li>
+  </ul>
+</nav>
+    
+<div class="content">
+	<p class="has-text-centered"><img src="hcard.png" alt="" /></p>
+<h1 id="bulma-horizontal-card" class="has-text-centered">bulma-horizontal-card</h1>
+<p class="has-text-centered"><a href="https://www.npmjs.com/package/@telophase/bulma-horizontal-card"><img src="https://img.shields.io/npm/v/@telophase/bulma-horizontal-card" alt="npm" /></a> <a href="https://www.npmjs.com/package/@telophase/bulma-horizontal-card"><img src="https://img.shields.io/npm/dw/@telophase/bulma-horizontal-card" alt="npm downloads" /></a> <a href="https://ko-fi.com/gimon"><img src="https://img.shields.io/static/v1?label=support&amp;color=blueviolet&amp;message=@%20ko-fi&amp;logo=ko-fi" alt="support development" /></a></p>
+<p class="has-text-centered">A <a href="https://github.com/jgthms/bulma">Bulma CSS</a> extension to support horizontal cards. Built for the latest version of Bulma (0.9.4)! You&rsquo;ll need it in order for this code to work.</p>
+<h2 id="notices">notices</h2>
+<article class="message is-warning">
+  <div class="message-header">
+    NOITCE: documentation incomplete
+  </div>
+  <div class="message-body">
+		<strong>THIS DOCUMENTATION IS A WORK IN PROGRESS.</strong>
+  </div>
+</article>
+<article class="message is-danger">
+  <div class="message-header">
+    WARNING: potential compatibility issues
+  </div>
+  <div class="message-body">
+		<p>This extension makes use of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:has">CSS pseudo-class <code>:has()</code></a> in order to achieve automatic/contextual control of the <code>.card-image</code>&rsquo;s <code>border-radius</code>. Specifically, it is used in a single case to control the removal of the bottom <code>border-radius</code> from the <code>.card-image</code> when a <code>footer.card-footer</code> element is present as a child of <code>.card</code>. This was the best way I could think to implement this.</p>
+<p><code>:has()</code> is supported in Chrome, Edge, Opera, and Safari by default, and major mobile browers, but <a href="https://caniuse.com/css-has">not in Firefox without enabling a special flag</a> (as of writing). It is NOT supported in any version of Internet Explorer.</p>
+<p>So, this extension includes additional utility classes that can force changes in the <code>border-radius</code> that the use of <code>:has()</code> otherwise would have. Just manually add them to your <code>.card-image</code> element.</p>
+  </div>
+</article>
+<h2 id="contributing">contributing</h2>
+<p>Contributions to this extension are always welcome!</p>
+<p>Though this project officially lives at <a href="https://dev.gimon.zone/bulma-horizontal-card/~files">dev.gimon.zone</a>, there is a <a href="https://github.com/telophase/bulma-horizontal-card">mirror on Github</a> that accepts contributions.</p>
+<p>Fork this project on Github and file a pull request, and I&rsquo;ll merge it back into main. :)</p>
+<h2 id="license">license</h2>
+<p>© <a href="https://gimon.zone">Alex H.</a> 2023-present. <br> MIT License.</p>
+<p>Initial code and CSS class syntax based on the work/input of contributors in <a href="https://github.com/jgthms/bulma/pull/1596">this Bulma pull request</a>. Thank you!</p>
+
+</div>
+
+    </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <p class="has-text-centered">Docs built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/00460ac8c594bfb7f118493ae59df92a163ccb1b">00460ac</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/00460ac8c594bfb7f118493ae59df92a163ccb1b">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
+  </footer>
+  </body>
+</html>

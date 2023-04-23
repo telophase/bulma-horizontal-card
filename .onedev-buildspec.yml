@@ -43,6 +43,76 @@ jobs:
   maxRetries: 3
   retryDelay: 30
   timeout: 3600
+- name: Build Documentation
+  jobExecutor: Main
+  steps:
+  - !CheckoutStep
+    name: Checkout
+    cloneCredential: !HttpCredential
+      accessTokenSecret: access-token
+    withLfs: false
+    withSubmodules: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  - !CommandStep
+    name: Build documentation
+    runInContainer: true
+    image: razonyang/hugo:exts
+    interpreter: !DefaultInterpreter
+      commands:
+      - cd ./hugo
+      - hugo -d ../docs
+    useTTY: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  - !CommandStep
+    name: Push build artifacts to repository
+    runInContainer: true
+    image: alpine/git
+    interpreter: !DefaultInterpreter
+      commands:
+      - git config --global user.name "Lil' Seb"
+      - git config --global user.email "devbot@@gimon.zone"
+      - git fetch origin main:main
+      - git checkout main
+      - git add docs/
+      - 'git commit -m "CI Job #@build_number@: build documentation"'
+      - git push origin main:main
+    useTTY: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  triggers:
+  - !BranchUpdateTrigger
+    branches: main
+    paths: hugo/**
+    projects: bulma-horizontal-card
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
+  timeout: 3600
+- name: Publish Documentation
+  jobExecutor: Main
+  steps:
+  - !CheckoutStep
+    name: Checkout
+    cloneCredential: !HttpCredential
+      accessTokenSecret: access-token
+    withLfs: false
+    withSubmodules: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  - !PublishSiteStep
+    projectPath: bulma-horizontal-card
+    name: Publish Documentation to Sites
+    sourcePath: docs/
+    artifacts: '**'
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  triggers:
+  - !DependencyFinishedTrigger
+    projects: bulma-horizontal-card
+  jobDependencies:
+  - jobName: Build Documentation
+    requireSuccessful: true
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
+  timeout: 3600
 - name: Push to Github
   steps:
   - !CheckoutStep

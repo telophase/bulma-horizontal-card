@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Use - </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card@1.0.0/css/bulma-horizontal-card.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+  </head>
+  <body>
+  <section class="section">
+  	<div class="columns">
+  		<div class="column is-2">
+  		  <aside class="menu">
+ <ul class="menu-list">
+ 
+  <li><a href="/bulma-horizontal-card/~site/"><span class="icon-text">
+    
+    <span>Home</span>
+  </span></a></li>
+  
+  <li><a href="/bulma-horizontal-card/~site/install"><span class="icon-text">
+    
+    <span>Installation</span>
+  </span></a></li>
+  
+  <li><a href="/bulma-horizontal-card/~site/usage"><span class="icon-text">
+    
+    <span>How to Use</span>
+  </span></a></li>
+  
+  <li><a href="/bulma-horizontal-card/~site/customize"><span class="icon-text">
+    
+    <span>Customize</span>
+  </span></a></li>
+  
+  <li><a href="https://github.com/telophase/bulma-horizontal-card"><span class="icon-text">
+    
+    <span class="icon">
+      <i class="fa fa-github Repo "></i>
+    </span>
+    
+    <span>Github</span>
+  </span></a></li>
+  
+  <li><a href="https://dev.gimon.zone/bulma-horizontal-card/~files"><span class="icon-text">
+    
+    <span class="icon">
+      <i class="fa fa-git "></i>
+    </span>
+    
+    <span>Local Repo</span>
+  </span></a></li>
+  
+ </ul>
+</aside>
+        <hr>
+        
+<aside class="content">
+	<b>Table of Contents</b>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-usage">Basic Usage</a>
+      <ul>
+        <li><a href="#image-alignment">Image Alignment</a></li>
+        <li><a href="#headers-and-footers">Headers and Footers</a>
+          <ul>
+            <li><a href="#inline">Inline</a></li>
+            <li><a href="#block">Block</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#border-radius-helper-classes"><code>border-radius</code> Helper Classes</a></li>
+    <li><a href="#notes-image-ratio-classes">Notes: Image Ratio Classes</a></li>
+    <li><a href="#notes-responsiveness">Notes: Responsiveness</a></li>
+  </ul>
+</nav>
+</aside>
+
+  		</div>
+  		<div class="column is-9">
+    <nav class="breadcrumb is-small" aria-label="breadcrumbs">
+  <ul>
+    
+      <li>
+        <a href="https://dev.gimon.zone/bulma-horizontal-card/~site/">bulma-horizontal-card</a>
+      </li>
+    
+     <li class="is-active">
+       <a aria-current="page" href="https://dev.gimon.zone/bulma-horizontal-card/~site/usage/">How to Use</a>
+    </li>
+  </ul>
+</nav>
+    
+<div class="content">
+<p class="title">How to Use</p>
+<p>How to use this extension.</p>
+<article class="message is-info">
+  <div class="message-body">
+		<strong>Note</strong>: Horizontal cards are expected to have at least a <code>.card-image</code> element <em>and</em> a <code>.card-content</code> element. This extension relies on this assumption to correctly style horizontal cards. Do not use <code>.is-horizontal</code> with  cards that do not contain both elements. Vertical (normal) cards will work best.
+  </div>
+</article>
+<h2 id="basic-usage">Basic Usage</h2>
+<p>To make any card horizontal, add the class <code>.is-horizontal</code> to your <code>.card</code> element.</p>
+
+<div class="card is-horizontal">
+    
+    <div class="card-image ">
+      <figure class="image is-4by3">
+        <img
+          src="https://bulma.io/images/placeholders/1280x960.png"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        <p>This is a card.</p>
+
+      </div>
+      
+    </div>
+  
+</div>
+
+<h3 id="image-alignment">Image Alignment</h3>
+<p>By default, the <code>.card-image</code> element is aligned to the left. The <code>.card-image</code> can also be placed on the right by adding the class <code>.is-right</code> to the <code>.card-image</code> element.</p>
+
+<div class="card is-horizontal">
+    
+    <div class="card-image is-right">
+      <figure class="image is-4by3">
+        <img
+          src="https://bulma.io/images/placeholders/1280x960.png"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        <p>This is a card with a right card image.</p>
+
+      </div>
+      
+    </div>
+  
+</div>
+
+<h3 id="headers-and-footers">Headers and Footers</h3>
+<p>Horizontal cards fully support the use of card header (<code>header.card-header</code>) and card footer (<code>footer.card-footer</code>) elements. Depending on where they are placed inside the <code>.card</code> div element, they will render as <em>inline</em> or <em>block</em>. You can mix and match inline and block headers/footers on the same card.</p>
+<article class="message is-info">
+  <div class="message-body">
+		<strong>Note</strong>: Header and footer behaviour relies on what element the header and footer are. Make sure your headers are <code>&lt;header&gt;</code> elements, and your footers are <code>&lt;footer&gt;</code> elements.
+  </div>
+</article>
+<h4 id="inline">Inline</h4>
+<p>If you place your <code>.card-header</code> or <code>.card-footer</code> elements <em>inside</em> <code>.card-content</code>, you will get an inline header or footer. It will be inline with your content and next to the <code>.card-image</code>.</p>
+
+<div class="card is-horizontal">
+    
+    <div class="card-image ">
+      <figure class="image is-4by3">
+        <img
+          src="https://bulma.io/images/placeholders/1280x960.png"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      
+        <header class="card-header">
+          <p class="card-header-title">Card header</p>
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </header>
+      
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        <p>This is a card.</p>
+
+      </div>
+      
+      <footer class="card-footer">
+        <a href="#" class="card-footer-item">Save</a>
+        <a href="#" class="card-footer-item">Edit</a>
+        <a href="#" class="card-footer-item">Delete</a>
+      </footer>
+      
+    </div>
+  
+</div>
+
+<h4 id="block">Block</h4>
+<p>If you place your <code>.card-header</code> <em>outside</em> of <code>.card-content</code> and <em>before</em> <code>.card-image</code>, and/or you place your <code>.card-footer</code> <em>outside</em> of and <em>after</em> <code>.card-content</code>, you will get a full-width header or footer. It will appear outside of your <code>.card-image</code>, above or below, and span the full width of the card.</p>
+
+<div class="card is-horizontal">
+    
+    <header class="card-header">
+      <p class="card-header-title">Card header</p>
+      <button class="card-header-icon" aria-label="more options">
+        <span class="icon">
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button>
+    </header>
+    
+    <div class="card-image ">
+      <figure class="image is-4by3">
+        <img
+          src="https://bulma.io/images/placeholders/1280x960.png"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        <p>This is a card.</p>
+
+      </div>
+      
+    </div>
+  
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item">Save</a>
+    <a href="#" class="card-footer-item">Edit</a>
+    <a href="#" class="card-footer-item">Delete</a>
+  </footer>
+  
+</div>
+
+<h2 id="border-radius-helper-classes"><code>border-radius</code> Helper Classes</h2>
+<h2 id="notes-image-ratio-classes">Notes: Image Ratio Classes</h2>
+<h2 id="notes-responsiveness">Notes: Responsiveness</h2>
+
+</div>
+
+    </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <p class="has-text-centered">Docs built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/00460ac8c594bfb7f118493ae59df92a163ccb1b">00460ac</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/00460ac8c594bfb7f118493ae59df92a163ccb1b">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
+  </footer>
+  </body>
+</html>

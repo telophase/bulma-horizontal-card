@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Customize Extension - </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card@1.0.0/css/bulma-horizontal-card.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+  </head>
+  <body>
+  <section class="section">
+  	<div class="columns">
+  		<div class="column is-2">
+  		  <aside class="menu">
+ <ul class="menu-list">
+ 
+  <li><a href="/bulma-horizontal-card/~site/"><span class="icon-text">
+    
+    <span>Home</span>
+  </span></a></li>
+  
+  <li><a href="/bulma-horizontal-card/~site/install"><span class="icon-text">
+    
+    <span>Installation</span>
+  </span></a></li>
+  
+  <li><a href="/bulma-horizontal-card/~site/usage"><span class="icon-text">
+    
+    <span>How to Use</span>
+  </span></a></li>
+  
+  <li><a href="/bulma-horizontal-card/~site/customize"><span class="icon-text">
+    
+    <span>Customize</span>
+  </span></a></li>
+  
+  <li><a href="https://github.com/telophase/bulma-horizontal-card"><span class="icon-text">
+    
+    <span class="icon">
+      <i class="fa fa-github Repo "></i>
+    </span>
+    
+    <span>Github</span>
+  </span></a></li>
+  
+  <li><a href="https://dev.gimon.zone/bulma-horizontal-card/~files"><span class="icon-text">
+    
+    <span class="icon">
+      <i class="fa fa-git "></i>
+    </span>
+    
+    <span>Local Repo</span>
+  </span></a></li>
+  
+ </ul>
+</aside>
+        <hr>
+        
+<aside class="content">
+	<b>Table of Contents</b>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#install-bulma">Install Bulma</a></li>
+    <li><a href="#import-into-your-sasscss">Import into your SASS/CSS</a></li>
+    <li><a href="#variables">Variables</a>
+      <ul>
+        <li><a href="#unique-to-bulma-horizontal-card">Unique to <code>bulma-horizontal-card</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#build-css-from-sass">Build CSS from SASS</a></li>
+  </ul>
+</nav>
+</aside>
+
+  		</div>
+  		<div class="column is-9">
+    <nav class="breadcrumb is-small" aria-label="breadcrumbs">
+  <ul>
+    
+      <li>
+        <a href="https://dev.gimon.zone/bulma-horizontal-card/~site/">bulma-horizontal-card</a>
+      </li>
+    
+     <li class="is-active">
+       <a aria-current="page" href="https://dev.gimon.zone/bulma-horizontal-card/~site/customize/">Customize Extension</a>
+    </li>
+  </ul>
+</nav>
+    
+<div class="content">
+<p class="title">Customize Extension</p>
+<p>How to customize the extension and use it in your Bulma project.</p>
+<h2 id="install-bulma">Install Bulma</h2>
+<p>If you don&rsquo;t already have Bulma installed, it should have been installed when you installed <a href="../install/#via-npm-for-bulma-sass"><code>bulma-horizontal-card</code> via NPM</a> as it is a dependency.</p>
+<p>You can install Bulma manually with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>npm i bulma
+</span></span></code></pre></div><h2 id="import-into-your-sasscss">Import into your SASS/CSS</h2>
+<p>After you&rsquo;ve installed <a href="../install/#via-npm-for-bulma-sass"><code>bulma-horizontal-card</code> via NPM</a> into your Bulma project directory, you can integrate it into your SCSS/SASS by adding the following line. Place this line <em>after</em> the line(s) that import Bulma (or at minimum, Bulma&rsquo;s <code>components/card.sass</code>)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#75715e">// scss
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">@import</span> <span style="color:#e6db74">&#39;@telophase/bulma-horizontal-card&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sass" data-lang="sass"><span style="display:flex;"><span><span style="color:#f92672">//</span> <span style="color:#f92672">sass</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@import</span> <span style="color:#e6db74">@telophase/bulma-horizontal-card</span>
+</span></span></code></pre></div><h2 id="variables">Variables</h2>
+<h3 id="unique-to-bulma-horizontal-card">Unique to <code>bulma-horizontal-card</code></h3>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$hcard-image-default-size</code></td>
+<td>Default width of the <code>.card-image</code> in horizontal cards</td>
+<td><code>12.5%</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="build-css-from-sass">Build CSS from SASS</h2>
+
+</div>
+
+    </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <p class="has-text-centered">Docs built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/00460ac8c594bfb7f118493ae59df92a163ccb1b">00460ac</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/00460ac8c594bfb7f118493ae59df92a163ccb1b">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
+  </footer>
+  </body>
+</html>
