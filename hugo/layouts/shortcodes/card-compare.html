@@ -1,0 +1,153 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="columns is-multiline">
+<div class="column is-6">
+<div class="card is-horizontal">
+    <div class="card-image {{ with .Get "image-classes" }}{{ . }}{{ end }}">
+      <figure class="image is-1by1">
+        <img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        Short, without <code>.is-forced-bottom</code>
+      </div>
+      <footer class="card-footer">
+        <a href="#" class="card-footer-item">Save</a>
+        <a href="#" class="card-footer-item">Edit</a>
+        <a href="#" class="card-footer-item">Delete</a>
+      </footer>
+    </div>
+</div>
+</div>
+<div class="column is-6">
+<div class="card is-horizontal">
+    <div class="card-image {{ with .Get "image-classes" }}{{ . }}{{ end }}">
+      <figure class="image is-1by1">
+        <img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        Short, with <code>.is-forced-bottom</code>
+      </div>
+      <footer class="card-footer is-forced-bottom">
+        <a href="#" class="card-footer-item">Save</a>
+        <a href="#" class="card-footer-item">Edit</a>
+        <a href="#" class="card-footer-item">Delete</a>
+      </footer>
+    </div>
+</div>
+</div>
+
+<div class="column is-6">
+    <div class="card is-horizontal">
+        <div class="card-image {{ with .Get "image-classes" }}{{ . }}{{ end }}">
+          <figure class="image is-1by1">
+            <img
+              src="../pexels-kris-møklebust.jpg"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img
+                  src="https://bulma.io/images/placeholders/96x96.png"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">John Smith</p>
+              <p class="subtitle is-6">@johnsmith</p>
+            </div>
+          </div>
+    
+          <div class="content">
+            Some really long content, without <code>.is-forced-bottom</code>. The text inside <code>.card-content</code> should be long enough to exceed the height of <code>.card-image</code>. On certain displays or screen sizes, this may not be the case. such is the nature of flexbox sometimes.
+          </div>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item">Save</a>
+            <a href="#" class="card-footer-item">Edit</a>
+            <a href="#" class="card-footer-item">Delete</a>
+          </footer>
+        </div>
+    </div>
+    </div>
+    <div class="column is-6">
+    <div class="card is-horizontal">
+        <div class="card-image {{ with .Get "image-classes" }}{{ . }}{{ end }}">
+          <figure class="image is-1by1">
+            <img
+              src="../pexels-kris-møklebust.jpg"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img
+                  src="https://bulma.io/images/placeholders/96x96.png"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">John Smith</p>
+              <p class="subtitle is-6">@johnsmith</p>
+            </div>
+          </div>
+    
+          <div class="content">
+            Some really long content, with <code>.is-forced-bottom</code>. The text inside <code>.card-content</code> should be long enough to exceed the height of <code>.card-image</code>. On certain displays or screen sizes, this may not be the case. such is the nature of flexbox sometimes.
+          </div>
+          <footer class="card-footer is-forced-bottom">
+            <a href="#" class="card-footer-item">Save</a>
+            <a href="#" class="card-footer-item">Edit</a>
+            <a href="#" class="card-footer-item">Delete</a>
+          </footer>
+        </div>
+    </div>
+    </div>
+
+</div>

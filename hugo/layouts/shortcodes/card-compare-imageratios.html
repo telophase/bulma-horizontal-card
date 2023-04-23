@@ -1,0 +1,132 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="columns is-multiline">
+<div class="column is-6">
+<div class="card is-horizontal mb-5">
+    <div class="card-image {{ with .Get "image-classes" }}{{ . }}{{ end }}">
+      <figure class="image">
+        <img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        This card's <code>figure.image</code> has no classes applied to it.
+      </div>
+    </div>
+</div>
+
+    <div class="card is-horizontal">
+        <div class="card-image {{ with .Get "image-classes" }}{{ . }}{{ end }}">
+          <figure class="image is-1by1">
+            <img
+              src="../pexels-kris-møklebust.jpg"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img
+                  src="https://bulma.io/images/placeholders/96x96.png"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">John Smith</p>
+              <p class="subtitle is-6">@johnsmith</p>
+            </div>
+          </div>
+    
+          <div class="content">
+            This card's <code>figure.image</code> has class <code>.is-1by1</code> applied to it.
+          </div>
+        </div>
+</div>
+
+
+</div>
+    <div class="column is-6">
+        <div class="card is-horizontal mb-5">
+            <div class="card-image {{ with .Get "image-classes" }}{{ . }}{{ end }}">
+              <figure class="image is-2by1">
+                <img
+                  src="../pexels-kris-møklebust.jpg"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img
+                      src="https://bulma.io/images/placeholders/96x96.png"
+                      alt="Placeholder image"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">John Smith</p>
+                  <p class="subtitle is-6">@johnsmith</p>
+                </div>
+              </div>
+        
+              <div class="content">
+                This card's <code>figure.image</code> has class <code>.is-2by1</code> applied to it.
+              </div>
+            </div>
+        </div>
+
+        <div class="card is-horizontal">
+            <div class="card-image {{ with .Get "image-classes" }}{{ . }}{{ end }}">
+              <figure class="image is-1by2">
+                <img
+                  src="../pexels-kris-møklebust.jpg"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img
+                      src="https://bulma.io/images/placeholders/96x96.png"
+                      alt="Placeholder image"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">John Smith</p>
+                  <p class="subtitle is-6">@johnsmith</p>
+                </div>
+              </div>
+        
+              <div class="content">
+                This card's <code>figure.image</code> has class <code>.is-1by2</code> applied to it.
+              </div>
+            </div>
+        </div>
+    </div>
+
+</div>
