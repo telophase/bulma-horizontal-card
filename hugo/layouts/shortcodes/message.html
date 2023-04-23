@@ -1,0 +1,11 @@
+{{ $color := .Get "color" | default "warning" }}
+<article class="message is-{{ $color }}">
+{{ with .Get "title" }}
+  <div class="message-header">
+    {{ . | safeHTML }}
+  </div>
+{{ end }}
+  <div class="message-body">
+		{{ .Inner | markdownify }}
+  </div>
+</article>

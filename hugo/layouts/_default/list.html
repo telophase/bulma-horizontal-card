@@ -1,13 +1,6 @@
 {{ define "main" }}
-	<main>
-		<div class="content">
-<p class="title">{{ .Title }}</p>
-{{ .Content }}
+<div class="content">
+	{{ .Content }}
 </div>
-
-		{{ range .Paginator.Pages }}
- {{ .Title }}
-		{{ end }}
-	</main>
 {{ end }}
 

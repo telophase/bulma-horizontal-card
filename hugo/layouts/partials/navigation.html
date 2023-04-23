@@ -1,0 +1,14 @@
+<aside class="menu">
+ <ul class="menu-list">
+ {{ range .Site.Menus.nav }}
+  <li><a href="{{ .URL }}"><span class="icon-text">
+    {{ with .Params.fa }}
+    <span class="icon">
+      <i class="fa fa-{{ . }} "></i>
+    </span>
+    {{ end }}
+    <span>{{ .Name }}</span>
+  </span></a></li>
+  {{ end }}
+ </ul>
+</aside>

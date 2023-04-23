@@ -8,18 +8,24 @@
     <title>{{ .Title }} - {{ with .Site.Params.title }}{{ . }}{{ end }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card@1.0.0/css/bulma-horizontal-card.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
   </head>
   <body>
   <section class="section">
   	<div class="columns">
   		<div class="column is-2">
-  		nav lol
+  		  {{ partial "navigation" . }}
+        <hr>
+        {{ partial "toc" . }}
   		</div>
-  		<div class="column is-10">
+  		<div class="column is-9">
     {{ partial "breadcrumb" . }}
     {{ block "main" . }}{{ end }}
     </div>
     </div>
   </section>
+  <footer class="footer">
+    <p class="has-text-centered">Docs built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/{{ .GitInfo.Hash }}">{{ .GitInfo.AbbreviatedHash }}</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/{{ .GitInfo.Hash }}">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
+  </footer>
   </body>
 </html>
