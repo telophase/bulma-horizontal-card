@@ -10,7 +10,7 @@ A [Bulma CSS](https://github.com/jgthms/bulma) extension to support horizontal c
 
 Built for the latest version of Bulma (0.9.4)! You'll need it in order for this code to work.
 
-**Documentation, installation instructions, and demonstrations can be found here: https://dev.gimon.zone/bulma-horizontal-card/~site**. [**CURRENTLY BEING WRITTEN**]
+**Documentation, installation instructions, and demonstrations can be found here: https://dev.gimon.zone/bulma-horizontal-card/~site**.
 
 
 ## important notice!
