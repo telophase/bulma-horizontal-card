@@ -43,3 +43,52 @@ jobs:
   maxRetries: 3
   retryDelay: 30
   timeout: 3600
+- name: Push to Github
+  steps:
+  - !CheckoutStep
+    name: Checkout
+    cloneCredential: !HttpCredential
+      accessTokenSecret: alex-access-token
+    withLfs: false
+    withSubmodules: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  - !PushRepository
+    name: Push to Github
+    remoteUrl: https://github.com/telophase/bulma-horizontal-card
+    userName: telophase
+    passwordSecret: github-access-token
+    force: true
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  triggers:
+  - !BranchUpdateTrigger {}
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
+  timeout: 3600
+- name: Pull from Github
+  steps:
+  - !CheckoutStep
+    name: Checkout
+    cloneCredential: !HttpCredential
+      accessTokenSecret: alex-access-token
+    withLfs: false
+    withSubmodules: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  - !PullRepository
+    name: Pull from Github
+    remoteUrl: https://github.com/telophase/bulma-horizontal-card
+    syncToChildProject: false
+    userName: telophase
+    passwordSecret: github-access-token
+    refs: refs/heads/* refs/tags/*
+    withLfs: true
+    force: false
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  triggers:
+  - !ScheduleTrigger
+    cronExpression: 0 0 0 ? * * *
+    projects: bulma-horizontal-card
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
+  timeout: 3600
