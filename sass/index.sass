@@ -1,0 +1,123 @@
+@charset "utf-8"
+/* bulma-horizontal-card | v1.0.0 (c) Alex H and contributors | MIT */
+
+// VARIABLES ------------
+/// horizontal cards have unique variables just in case someone needs to style
+/// them differently from vertical ones. by default they'll be identical.
+$hcard-color: $card-color !default
+$hcard-background-color: $card-background-color !default
+// TODO - add more/all variables
+
+/// unique variables
+$hcard-image-default-size: 12.5% !default
+
+// STYLES ------------
+.content
+  /// prevents images inside ALL cards from inheriting a large margin from 
+  /// being inside an element with class .content
+  /// also removes a bottom margin from .card-header-titles if the card is
+  /// inside .content
+  .card
+    figure.image
+      margin-left: 0
+      margin-right: 0
+    .card-header-title
+      margin-bottom: 0
+
+.card
+  .media:not(:last-child)
+    margin-bottom: 0.75rem
+
+  &.is-horizontal
+    display: flex
+    flex-flow: row wrap
+    flex-basis: 50ex
+    flex-grow: 0
+    flex-shrink: 1
+
+    /// for external, wide header placed outside card-content and before card-image
+    header.card-header:first-child
+      flex-grow: 1
+      flex-shrink: 0
+      flex-basis: 100%
+
+    /// for external, wide footer placed outside card-content and before card-image
+    footer.card-footer:last-child
+      flex-grow: 5
+      flex-shrink: 0
+      flex-basis: 100%
+      order: 99 /// force footer to end of card
+
+    /// style card-images
+    .card-image, .card-image.is-left
+      flex: 2
+      flex-shrink: 2
+      flex-basis: $hcard-image-default-size
+      .image
+        display: block
+        position: relative
+        overflow: hidden
+        height: 100%
+        width: 100%
+        img
+          height: 100%
+          object-fit: cover
+          object-position: center
+          border-top-left-radius: $card-radius
+          border-bottom-right-radius: 0
+          border-bottom-left-radius: $card-radius
+          border-top-right-radius: 0
+      &.is-right
+        /// must use "order" instead of "flex-direction" since flex-direction 
+        /// is relative to language (is-right would be on the left in RTL mode)
+        order: 2
+        .image
+          img
+            border-top-right-radius: $card-radius
+            border-bottom-left-radius: 0
+            border-bottom-right-radius: $card-radius
+            border-top-left-radius: 0
+            
+    /// force 0 unit bottom border on the card image when an outer card footer is present
+    /// (when a footer.card-footer is present as a direct child of .card)
+    /// using :has. :has is still not completely supported in firefox :'(
+    .card-image:has(~ footer.card-footer)
+        .image
+          img
+            border-bottom-right-radius: 0
+            border-bottom-left-radius: 0
+
+    /// force 0 unit top border on the card-image when an outer card header is present
+    /// (when the card image immediately follows the header)
+    header.card-header ~ .card-image
+        .image
+          img
+            border-top-right-radius: 0
+            border-top-left-radius: 0
+            
+    .card-content
+      flex: 3
+      flex-shrink: 3
+      position: relative
+      /// inline card header
+      header.card-header
+        margin-top: -$card-content-padding
+        margin-left: -$card-content-padding 
+        margin-bottom: $card-content-padding 
+        margin-right: -$card-content-padding
+      /// inline card footer
+      footer.card-footer
+        margin-top: $card-content-padding 
+        margin-left: -$card-content-padding 
+        margin-bottom: -$card-content-padding 
+        margin-right: -$card-content-padding
+
+        /// allow optional forcing of the inline footer to stick to the bottom
+        /// of the card, in cases where the image will make the card longer than
+        /// by the text alone.
+        /// TODO improve responsiveness of this hack
+        &.is-forced-bottom
+          margin-bottom: 0
+          position: absolute
+          bottom: 0
+          width: 100%
