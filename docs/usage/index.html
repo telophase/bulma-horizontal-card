@@ -68,15 +68,16 @@
         <li><a href="#image-alignment">Image Alignment</a></li>
         <li><a href="#headers-and-footers">Headers and Footers</a>
           <ul>
-            <li><a href="#inline">Inline</a></li>
             <li><a href="#block">Block</a></li>
+            <li><a href="#inline">Inline</a></li>
+            <li><a href="#special-class-is-forced-bottom">Special Class <code>.is-forced-bottom</code></a></li>
           </ul>
         </li>
       </ul>
     </li>
     <li><a href="#border-radius-helper-classes"><code>border-radius</code> Helper Classes</a></li>
-    <li><a href="#notes-image-ratio-classes">Notes: Image Ratio Classes</a></li>
-    <li><a href="#notes-responsiveness">Notes: Responsiveness</a></li>
+    <li><a href="#use-with-image-ratio-classes">Use with Image Ratio Classes</a></li>
+    <li><a href="#notes-on-responsiveness">Notes on Responsiveness</a></li>
   </ul>
 </nav>
 </aside>
@@ -107,12 +108,14 @@
 <h2 id="basic-usage">Basic Usage</h2>
 <p>To make any card horizontal, add the class <code>.is-horizontal</code> to your <code>.card</code> element.</p>
 
+<div class="columns">
+<div class="column is-6">
 <div class="card is-horizontal">
     
     <div class="card-image ">
-      <figure class="image is-4by3">
+      <figure class="image">
         <img
-          src="https://bulma.io/images/placeholders/1280x960.png"
+          src="../pexels-kris-møklebust.jpg"
           alt="Placeholder image"
         />
       </figure>
@@ -142,16 +145,50 @@
     </div>
   
 </div>
+</div>
+<div class="column is-6">
+	<pre><code>&lt;div class="card is-horizontal"&gt; 
+    &lt;div class="card-image"&gt;
+      &lt;figure class="image"&gt;
+        &lt;img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        /&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="media"&gt;
+        &lt;div class="media-left"&gt;
+          &lt;figure class="image is-48x48"&gt;
+            &lt;img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            /&gt;
+          &lt;/figure&gt;
+        &lt;/div&gt;
+        &lt;div class="media-content"&gt;
+          &lt;p class="title is-4"&gt;John Smith&lt;/p&gt;
+          &lt;p class="subtitle is-6"&gt;@johnsmith&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      &lt;div class="content"&gt;This is a card.&lt;/div&gt;
+      
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
 
 <h3 id="image-alignment">Image Alignment</h3>
 <p>By default, the <code>.card-image</code> element is aligned to the left. The <code>.card-image</code> can also be placed on the right by adding the class <code>.is-right</code> to the <code>.card-image</code> element.</p>
 
+<div class="columns">
+<div class="column is-6">
 <div class="card is-horizontal">
     
     <div class="card-image is-right">
-      <figure class="image is-4by3">
+      <figure class="image">
         <img
-          src="https://bulma.io/images/placeholders/1280x960.png"
+          src="../pexels-kris-møklebust.jpg"
           alt="Placeholder image"
         />
       </figure>
@@ -181,6 +218,38 @@
     </div>
   
 </div>
+</div>
+<div class="column is-6">
+	<pre><code>&lt;div class="card is-horizontal"&gt; 
+    &lt;div class="card-image is-right"&gt;
+      &lt;figure class="image"&gt;
+        &lt;img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        /&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="media"&gt;
+        &lt;div class="media-left"&gt;
+          &lt;figure class="image is-48x48"&gt;
+            &lt;img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            /&gt;
+          &lt;/figure&gt;
+        &lt;/div&gt;
+        &lt;div class="media-content"&gt;
+          &lt;p class="title is-4"&gt;John Smith&lt;/p&gt;
+          &lt;p class="subtitle is-6"&gt;@johnsmith&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      &lt;div class="content"&gt;This is a card with a right card image.&lt;/div&gt;
+      
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
 
 <h3 id="headers-and-footers">Headers and Footers</h3>
 <p>Horizontal cards fully support the use of card header (<code>header.card-header</code>) and card footer (<code>footer.card-footer</code>) elements. Depending on where they are placed inside the <code>.card</code> div element, they will render as <em>inline</em> or <em>block</em>. You can mix and match inline and block headers/footers on the same card.</p>
@@ -189,15 +258,118 @@
 		<strong>Note</strong>: Header and footer behaviour relies on what element the header and footer are. Make sure your headers are <code>&lt;header&gt;</code> elements, and your footers are <code>&lt;footer&gt;</code> elements.
   </div>
 </article>
+<h4 id="block">Block</h4>
+<p>If you place your <code>.card-header</code> <em>outside</em> of <code>.card-content</code> and <em>before</em> <code>.card-image</code>, and/or you place your <code>.card-footer</code> <em>outside</em> of and <em>after</em> <code>.card-content</code>, you will get a full-width header or footer. It will appear outside of your <code>.card-image</code>, above or below, and span the full width of the card.</p>
+
+<div class="columns">
+<div class="column is-6">
+<div class="card is-horizontal">
+    
+    <header class="card-header">
+      <p class="card-header-title">Card header</p>
+      <button class="card-header-icon" aria-label="more options">
+        <span class="icon">
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
+        </span>
+      </button>
+    </header>
+    
+    <div class="card-image ">
+      <figure class="image">
+        <img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        <p>This card has a block header and a block footer.</p>
+
+      </div>
+      
+    </div>
+  
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item">Save</a>
+    <a href="#" class="card-footer-item">Edit</a>
+    <a href="#" class="card-footer-item">Delete</a>
+  </footer>
+  
+</div>
+</div>
+<div class="column is-6">
+	<pre><code>&lt;div class="card is-horizontal"&gt; 
+  &lt;header class="card-header"&gt;
+      &lt;p class="card-header-title"&gt;Card header&lt;/p&gt;
+      &lt;button class="card-header-icon" aria-label="more options"&gt;
+        &lt;span class="icon"&gt;
+          &lt;i class="fas fa-angle-down" aria-hidden="true"&gt;&lt;/i&gt;
+        &lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/header&gt;
+    &lt;div class="card-image"&gt;
+      &lt;figure class="image"&gt;
+        &lt;img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        /&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="media"&gt;
+        &lt;div class="media-left"&gt;
+          &lt;figure class="image is-48x48"&gt;
+            &lt;img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            /&gt;
+          &lt;/figure&gt;
+        &lt;/div&gt;
+        &lt;div class="media-content"&gt;
+          &lt;p class="title is-4"&gt;John Smith&lt;/p&gt;
+          &lt;p class="subtitle is-6"&gt;@johnsmith&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      &lt;div class="content"&gt;This card has a block header and a block footer.&lt;/div&gt;
+      
+    &lt;/div&gt;
+  &lt;footer class="card-footer"&gt;
+    &lt;a href="#" class="card-footer-item"&gt;Save&lt;/a&gt;
+    &lt;a href="#" class="card-footer-item"&gt;Edit&lt;/a&gt;
+    &lt;a href="#" class="card-footer-item"&gt;Delete&lt;/a&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+
 <h4 id="inline">Inline</h4>
 <p>If you place your <code>.card-header</code> or <code>.card-footer</code> elements <em>inside</em> <code>.card-content</code>, you will get an inline header or footer. It will be inline with your content and next to the <code>.card-image</code>.</p>
 
+<div class="columns">
+<div class="column is-6">
 <div class="card is-horizontal">
     
     <div class="card-image ">
-      <figure class="image is-4by3">
+      <figure class="image">
         <img
-          src="https://bulma.io/images/placeholders/1280x960.png"
+          src="../pexels-kris-møklebust.jpg"
           alt="Placeholder image"
         />
       </figure>
@@ -229,11 +401,11 @@
       </div>
 
       <div class="content">
-        <p>This is a card.</p>
+        <p>This card has an inline header and an inline footer.</p>
 
       </div>
       
-      <footer class="card-footer">
+      <footer class="card-footer is-forced-bottom">
         <a href="#" class="card-footer-item">Save</a>
         <a href="#" class="card-footer-item">Edit</a>
         <a href="#" class="card-footer-item">Delete</a>
@@ -242,31 +414,67 @@
     </div>
   
 </div>
+</div>
+<div class="column is-6">
+	<pre><code>&lt;div class="card is-horizontal"&gt; 
+    &lt;div class="card-image"&gt;
+      &lt;figure class="image"&gt;
+        &lt;img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        /&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+        &lt;header class="card-header"&gt;
+          &lt;p class="card-header-title"&gt;Card header&lt;/p&gt;
+          &lt;button class="card-header-icon" aria-label="more options"&gt;
+            &lt;span class="icon"&gt;
+              &lt;i class="fas fa-angle-down" aria-hidden="true"&gt;&lt;/i&gt;
+            &lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/header&gt;
+      &lt;div class="media"&gt;
+        &lt;div class="media-left"&gt;
+          &lt;figure class="image is-48x48"&gt;
+            &lt;img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            /&gt;
+          &lt;/figure&gt;
+        &lt;/div&gt;
+        &lt;div class="media-content"&gt;
+          &lt;p class="title is-4"&gt;John Smith&lt;/p&gt;
+          &lt;p class="subtitle is-6"&gt;@johnsmith&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      &lt;div class="content"&gt;This card has an inline header and an inline footer.&lt;/div&gt;
+      &lt;footer class="card-footer is-forced-bottom"&gt;
+        &lt;a href="#" class="card-footer-item"&gt;Save&lt;/a&gt;
+        &lt;a href="#" class="card-footer-item"&gt;Edit&lt;/a&gt;
+        &lt;a href="#" class="card-footer-item"&gt;Delete&lt;/a&gt;
+      &lt;/footer&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
 
-<h4 id="block">Block</h4>
-<p>If you place your <code>.card-header</code> <em>outside</em> of <code>.card-content</code> and <em>before</em> <code>.card-image</code>, and/or you place your <code>.card-footer</code> <em>outside</em> of and <em>after</em> <code>.card-content</code>, you will get a full-width header or footer. It will appear outside of your <code>.card-image</code>, above or below, and span the full width of the card.</p>
+<h4 id="special-class-is-forced-bottom">Special Class <code>.is-forced-bottom</code></h4>
+<p>If your card is too tall, the <code>.card-footer</code> may appear to float inside the card. You can add the class <code>.is-force-bottom</code> to your <code>.card-footer</code>; this will cause it to stick to the bottom of the card. However, because this uses <code>position: absolute;</code>, the forced inline card footer will ignore internal margins and may appear too close to your other <code>.card-content</code>.</p>
+<p>See the examples below. Check card behaviour per screen size before using this class.</p>
 
+<div class="columns is-multiline">
+<div class="column is-6">
 <div class="card is-horizontal">
-    
-    <header class="card-header">
-      <p class="card-header-title">Card header</p>
-      <button class="card-header-icon" aria-label="more options">
-        <span class="icon">
-          <i class="fa fa-angle-down" aria-hidden="true"></i>
-        </span>
-      </button>
-    </header>
-    
     <div class="card-image ">
-      <figure class="image is-4by3">
+      <figure class="image is-1by1">
         <img
-          src="https://bulma.io/images/placeholders/1280x960.png"
+          src="../pexels-kris-møklebust.jpg"
           alt="Placeholder image"
         />
       </figure>
     </div>
     <div class="card-content">
-      
       <div class="media">
         <div class="media-left">
           <figure class="image is-48x48">
@@ -283,31 +491,299 @@
       </div>
 
       <div class="content">
-        <p>This is a card.</p>
-
+        Short, without <code>.is-forced-bottom</code>
       </div>
-      
+      <footer class="card-footer">
+        <a href="#" class="card-footer-item">Save</a>
+        <a href="#" class="card-footer-item">Edit</a>
+        <a href="#" class="card-footer-item">Delete</a>
+      </footer>
     </div>
-  
-  <footer class="card-footer">
-    <a href="#" class="card-footer-item">Save</a>
-    <a href="#" class="card-footer-item">Edit</a>
-    <a href="#" class="card-footer-item">Delete</a>
-  </footer>
-  
+</div>
+</div>
+<div class="column is-6">
+<div class="card is-horizontal">
+    <div class="card-image ">
+      <figure class="image is-1by1">
+        <img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        Short, with <code>.is-forced-bottom</code>
+      </div>
+      <footer class="card-footer is-forced-bottom">
+        <a href="#" class="card-footer-item">Save</a>
+        <a href="#" class="card-footer-item">Edit</a>
+        <a href="#" class="card-footer-item">Delete</a>
+      </footer>
+    </div>
+</div>
 </div>
 
-<h2 id="border-radius-helper-classes"><code>border-radius</code> Helper Classes</h2>
-<h2 id="notes-image-ratio-classes">Notes: Image Ratio Classes</h2>
-<h2 id="notes-responsiveness">Notes: Responsiveness</h2>
+<div class="column is-6">
+    <div class="card is-horizontal">
+        <div class="card-image ">
+          <figure class="image is-1by1">
+            <img
+              src="../pexels-kris-møklebust.jpg"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img
+                  src="https://bulma.io/images/placeholders/96x96.png"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">John Smith</p>
+              <p class="subtitle is-6">@johnsmith</p>
+            </div>
+          </div>
+    
+          <div class="content">
+            Some really long content, without <code>.is-forced-bottom</code>. The text inside <code>.card-content</code> should be long enough to exceed the height of <code>.card-image</code>. On certain displays or screen sizes, this may not be the case. such is the nature of flexbox sometimes.
+          </div>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item">Save</a>
+            <a href="#" class="card-footer-item">Edit</a>
+            <a href="#" class="card-footer-item">Delete</a>
+          </footer>
+        </div>
+    </div>
+    </div>
+    <div class="column is-6">
+    <div class="card is-horizontal">
+        <div class="card-image ">
+          <figure class="image is-1by1">
+            <img
+              src="../pexels-kris-møklebust.jpg"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img
+                  src="https://bulma.io/images/placeholders/96x96.png"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">John Smith</p>
+              <p class="subtitle is-6">@johnsmith</p>
+            </div>
+          </div>
+    
+          <div class="content">
+            Some really long content, with <code>.is-forced-bottom</code>. The text inside <code>.card-content</code> should be long enough to exceed the height of <code>.card-image</code>. On certain displays or screen sizes, this may not be the case. such is the nature of flexbox sometimes.
+          </div>
+          <footer class="card-footer is-forced-bottom">
+            <a href="#" class="card-footer-item">Save</a>
+            <a href="#" class="card-footer-item">Edit</a>
+            <a href="#" class="card-footer-item">Delete</a>
+          </footer>
+        </div>
+    </div>
+    </div>
 
+</div>
+
+<article class="message is-primary">
+  <div class="message-body">
+		<strong>TO-DO</strong>: Improve responsiveness of <code>.is-forced-bottom</code>.
+  </div>
+</article>
+<hr />
+<h2 id="border-radius-helper-classes"><code>border-radius</code> Helper Classes</h2>
+<article class="message is-primary">
+  <div class="message-body">
+		<strong>TO-DO</strong>: Add helper classes.
+  </div>
+</article>
+<h2 id="use-with-image-ratio-classes">Use with Image Ratio Classes</h2>
+<p>Bulma has several <a href="https://bulma.io/documentation/elements/image/#responsive-images-with-ratios">responsive image aspect ratio classes (ratio modifiers)</a> that define how images are displayed responsively based only on dimensional ratio.</p>
+<p>By default, very long or very wide images may appear too large/small as <code>.card-image</code>. For horizontal <code>.card-image</code>s, these classes alter the apparent height without altering the image&rsquo;s actual dimensions (ie. no distortion).</p>
+<p>These classes can be used to manipulate the height of the <code>.card-image</code>. Simply apply these classes to the <code>figure.image</code> element inside the <code>.card-image</code> div element.</p>
+<pre tabindex="0"><code>&lt;div class=&#34;card-image&#34;&gt;
+    &lt;figure class=&#34;image is-XbyX&#34;&gt;
+        &lt;img src=&#34;&#34; alt=&#34;&#34;/&gt;
+    &lt;/figure&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="columns is-multiline">
+<div class="column is-6">
+<div class="card is-horizontal mb-5">
+    <div class="card-image ">
+      <figure class="image">
+        <img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        This card's <code>figure.image</code> has no classes applied to it.
+      </div>
+    </div>
+</div>
+
+    <div class="card is-horizontal">
+        <div class="card-image ">
+          <figure class="image is-1by1">
+            <img
+              src="../pexels-kris-møklebust.jpg"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img
+                  src="https://bulma.io/images/placeholders/96x96.png"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">John Smith</p>
+              <p class="subtitle is-6">@johnsmith</p>
+            </div>
+          </div>
+    
+          <div class="content">
+            This card's <code>figure.image</code> has class <code>.is-1by1</code> applied to it.
+          </div>
+        </div>
+</div>
+
+
+</div>
+    <div class="column is-6">
+        <div class="card is-horizontal mb-5">
+            <div class="card-image ">
+              <figure class="image is-2by1">
+                <img
+                  src="../pexels-kris-møklebust.jpg"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img
+                      src="https://bulma.io/images/placeholders/96x96.png"
+                      alt="Placeholder image"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">John Smith</p>
+                  <p class="subtitle is-6">@johnsmith</p>
+                </div>
+              </div>
+        
+              <div class="content">
+                This card's <code>figure.image</code> has class <code>.is-2by1</code> applied to it.
+              </div>
+            </div>
+        </div>
+
+        <div class="card is-horizontal">
+            <div class="card-image ">
+              <figure class="image is-1by2">
+                <img
+                  src="../pexels-kris-møklebust.jpg"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img
+                      src="https://bulma.io/images/placeholders/96x96.png"
+                      alt="Placeholder image"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">John Smith</p>
+                  <p class="subtitle is-6">@johnsmith</p>
+                </div>
+              </div>
+        
+              <div class="content">
+                This card's <code>figure.image</code> has class <code>.is-1by2</code> applied to it.
+              </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<h2 id="notes-on-responsiveness">Notes on Responsiveness</h2>
+<p>Horizontal cards are based on CSS flexboxes, just like the rest of Bulma.</p>
+<article class="message is-primary">
+  <div class="message-body">
+		<strong>TO-DO</strong>: Fine-tune horizontal card responsiveness.
+  </div>
+</article>
 </div>
 
     </div>
     </div>
   </section>
   <footer class="footer">
-    <p class="has-text-centered">Docs built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/00460ac8c594bfb7f118493ae59df92a163ccb1b">00460ac</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/00460ac8c594bfb7f118493ae59df92a163ccb1b">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
+    <p class="has-text-centered">Docs built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/fae146a86b043548e12ab9c63a212ea4a45bddbb">fae146a</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/fae146a86b043548e12ab9c63a212ea4a45bddbb">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
   </footer>
   </body>
 </html>

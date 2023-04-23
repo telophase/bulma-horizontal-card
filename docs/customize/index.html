@@ -65,12 +65,12 @@
   <ul>
     <li><a href="#install-bulma">Install Bulma</a></li>
     <li><a href="#import-into-your-sasscss">Import into your SASS/CSS</a></li>
+    <li><a href="#edit-sass-from-npm">Edit SASS from NPM</a></li>
     <li><a href="#variables">Variables</a>
       <ul>
         <li><a href="#unique-to-bulma-horizontal-card">Unique to <code>bulma-horizontal-card</code></a></li>
       </ul>
     </li>
-    <li><a href="#build-css-from-sass">Build CSS from SASS</a></li>
   </ul>
 </nav>
 </aside>
@@ -103,7 +103,19 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">@import</span> <span style="color:#e6db74">&#39;@telophase/bulma-horizontal-card&#39;</span>
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sass" data-lang="sass"><span style="display:flex;"><span><span style="color:#f92672">//</span> <span style="color:#f92672">sass</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">@import</span> <span style="color:#e6db74">@telophase/bulma-horizontal-card</span>
-</span></span></code></pre></div><h2 id="variables">Variables</h2>
+</span></span></code></pre></div><br>
+<p><code>bulma-horizontal-card</code> should now be built into your SASS and any compiled CSS from it.</p>
+<h2 id="edit-sass-from-npm">Edit SASS from NPM</h2>
+<p>Depedening on your <code>NODE_ENV</code> settings, development dependencies for <code>bulma-horizontal-card</code> may not have been installed. Run the following code to install them explicitly. This will install Bulma, <a href="https://www.npmjs.com/package/sass">Dart SASS</a>, and CSS-Minify.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>npm i @telophase/bulma-horizontal-card --only<span style="color:#f92672">=</span>dev
+</span></span></code></pre></div><br>
+<p>You can find the raw SASS at <code>../node_modules/@telophase/bulma-horizontal-card/sass/index.sass</code>. You can then build the SASS from that directory using the included scripts <code>css-build</code> and <code>css-min</code>.</p>
+<article class="message is-warning">
+  <div class="message-body">
+		<strong>NOTE</strong>: Node-SASS has been deprecated. The included scripts use Dart SASS command syntax in order to compile CSS. If you wish to use node-SASS anyway, you&rsquo;ll need to edit the scripts in <code>package.json</code>.
+  </div>
+</article>
+<h2 id="variables">Variables</h2>
 <h3 id="unique-to-bulma-horizontal-card">Unique to <code>bulma-horizontal-card</code></h3>
 <table>
 <thead>
@@ -121,15 +133,18 @@
 </tr>
 </tbody>
 </table>
-<h2 id="build-css-from-sass">Build CSS from SASS</h2>
-
+<article class="message is-primary">
+  <div class="message-body">
+		<strong>TO-DO</strong>: Add abstraction variables to horizontal cards to allow more granular customization.
+  </div>
+</article>
 </div>
 
     </div>
     </div>
   </section>
   <footer class="footer">
-    <p class="has-text-centered">Docs built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/00460ac8c594bfb7f118493ae59df92a163ccb1b">00460ac</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/00460ac8c594bfb7f118493ae59df92a163ccb1b">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
+    <p class="has-text-centered">Docs built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/fae146a86b043548e12ab9c63a212ea4a45bddbb">fae146a</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/fae146a86b043548e12ab9c63a212ea4a45bddbb">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
   </footer>
   </body>
 </html>
