@@ -9,13 +9,9 @@ Install `bulma-horizontal-card` via NPM CLI.
 ```sh
 npm i @telophase/bulma-horizontal-card
 ```
+<br/>
 
-<br><br>
-
-You can then integrate the extension into your Bulma SASS project by importing the `index.sass` file in your SCSS *after* importing Bulma.
-```scss
-@import "./node_modules/@telophase/bulma-horizontal-card/src/sass/index.sass";
-```
+See the [Customize](customize) page for more information about variables and using in your Bulma project.
 
 ## Via CDN as precompiled
 The `bulma-horizontal-card` extension's compiled CSS is available via jsDeliver's global CDN. Be sure you are also importing Bulma's CSS as well.
@@ -24,22 +20,21 @@ The `bulma-horizontal-card` extension's compiled CSS is available via jsDeliver'
 
 ```css
 /* unminified */
-@import "https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card/@latest/css/bulma-horizontal-card.css"
+@import "https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card/css/bulma-horizontal-card.css"
 
 /* minified */
-@import "https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card/@latest/css/bulma-horizontal-card.min.css"
+@import "https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card/css/bulma-horizontal-card.min.css"
 ```
-
-<br><br>
+<br>
 
 **Import in HTML**
 ```html
 <!-- unminified -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card/@latest/css/bulma-horizontal-card.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card/css/bulma-horizontal-card.css">
 
 <!-- minified -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card/@latest/css/bulma-horizontal-card.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card/css/bulma-horizontal-card.min.css">
 ```
 
 ## From Github as precompiled
-Download the repository tarball/ZIP and extract anywhere. Move the files to the location of your choice.
+Download the [repository tarball](https://github.com/telophase/bulma-horizontal-card/archive/refs/heads/main.zip) or [clone the repository](https://github.com/telophase/bulma-horizontal-card.git) to your local machine. Move the files to the location of your choice, and link to them as needed.

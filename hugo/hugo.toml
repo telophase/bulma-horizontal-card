@@ -1,9 +1,46 @@
 baseURL = 'https://dev.gimon.zone/bulma-horizontal-card/~site'
 languageCode = 'en-us'
 title = 'bulma-horizontal-card documentation'
+enableGitInfo = true
 
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+      [markup.goldmark.renderer]
+      hardWraps = true
+      unsafe = true
+      xhtml = true
   [markup.tableOfContents]
     endLevel = 4
     ordered = false
     startLevel = 2
+
+[menu]
+[[menu.nav]]
+  name = 'Home'
+  url = '/'
+  weight = 10
+[[menu.nav]]
+  name = 'Installation'
+  url = '/install'
+  weight = 20
+[[menu.nav]]
+  name = 'How to Use'
+  url = '/usage'
+  weight = 30
+[[menu.nav]]
+  name = 'Customize'
+  url = '/customize'
+  weight = 40
+[[menu.nav]]
+  name = 'Github'
+  params = { fa = 'github Repo' }
+  url = 'https://github.com/telophase/bulma-horizontal-card'
+  weight = 80
+[[menu.nav]]
+  name = 'Local Repo'
+  params = { fa = 'git' }
+  url = 'https://dev.gimon.zone/bulma-horizontal-card/~files'
+  weight = 80
