@@ -68,6 +68,7 @@
     <li><a href="#edit-sass-from-npm">Edit SASS from NPM</a></li>
     <li><a href="#variables">Variables</a>
       <ul>
+        <li><a href="#general-variables">General Variables</a></li>
         <li><a href="#unique-to-bulma-horizontal-card">Unique to <code>bulma-horizontal-card</code></a></li>
       </ul>
     </li>
@@ -116,11 +117,117 @@
   </div>
 </article>
 <h2 id="variables">Variables</h2>
-<h3 id="unique-to-bulma-horizontal-card">Unique to <code>bulma-horizontal-card</code></h3>
+<h3 id="general-variables">General Variables</h3>
+<p>To provide room to style or tweak horizontal cards separately from &ldquo;normal&rdquo; vertical cards, horizontal cards use unique variables for colors, radii, etc.</p>
+<p>By default, these are mapped to the <a href="https://bulma.io/documentation/components/card/#variables">same variables that normal cards use</a> (the &ldquo;Equivalent&rdquo; column in this chart).</p>
 <table>
 <thead>
 <tr>
-<th>Syntax</th>
+<th>Name</th>
+<th>Description</th>
+<th>Equivalent</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$hcard-color</code></td>
+<td>Card text color.</td>
+<td><code>$card-color</code></td>
+<td><code>$text</code></td>
+</tr>
+<tr>
+<td><code>$hcard-background-color</code></td>
+<td>Card background color.</td>
+<td><code>$card-background-color</code></td>
+<td><code>$scheme-main</code></td>
+</tr>
+<tr>
+<td><code>$hcard-shadow</code></td>
+<td>Card shadows.</td>
+<td><code>$card-shadow</code></td>
+<td><code>$shadow</code></td>
+</tr>
+<tr>
+<td><code>$hcard-radius</code></td>
+<td>Card radius (roundness).</td>
+<td><code>$card-radius</code></td>
+<td><code>0.25rem</code></td>
+</tr>
+<tr>
+<td><code>$hcard-header-background-color</code></td>
+<td>Background color for card headers.</td>
+<td><code>$card-header-background-color</code></td>
+<td><code>transparent</code></td>
+</tr>
+<tr>
+<td><code>$hcard-header-color</code></td>
+<td>Card header text color.</td>
+<td><code>$card-header-color</code></td>
+<td><code>$text-strong</code></td>
+</tr>
+<tr>
+<td><code>$hcard-header-padding</code></td>
+<td>Text padding in card headers.</td>
+<td><code>$card-header-padding</code></td>
+<td><code>0.75rem 1rem</code></td>
+</tr>
+<tr>
+<td><code>$hcard-header-shadow</code></td>
+<td>Shadows for card headers.</td>
+<td><code>$card-header-shadows</code></td>
+<td><code>0 0.125em 0.25em rgba($scheme-invert, 0.1)</code></td>
+</tr>
+<tr>
+<td><code>$hcard-header-weight</code></td>
+<td>Font weight for card header text.</td>
+<td><code>$card-header-weight</code></td>
+<td><code>$weight-bold</code></td>
+</tr>
+<tr>
+<td><code>$hcard-content-background-color</code></td>
+<td>Card content background color.</td>
+<td><code>$card-content-background-color</code></td>
+<td><code>transparent</code></td>
+</tr>
+<tr>
+<td><code>$hcard-content-padding</code></td>
+<td>Padding for internal card contents.</td>
+<td><code>$card-content-padding</code></td>
+<td><code>transparent</code></td>
+</tr>
+<tr>
+<td><code>$hcard-footer-background-color</code></td>
+<td>Background color for the card footer.</td>
+<td><code>$card-footer-background-color</code></td>
+<td><code>transparent</code></td>
+</tr>
+<tr>
+<td><code>$hcard-footer-border-top</code></td>
+<td>Definition of the card footer top border</td>
+<td><code>$card-footer-border-top</code></td>
+<td><code>1px solid $border-light</code></td>
+</tr>
+<tr>
+<td><code>$hcard-footer-padding</code></td>
+<td>Padding around card footers.</td>
+<td><code>$card-footer-padding</code></td>
+<td><code>0.75rem</code></td>
+</tr>
+<tr>
+<td><code>$hcard-media-margin</code></td>
+<td>Margin around card media</td>
+<td><code>$card-media-margin</code></td>
+<td><code>$block-spacing</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="unique-to-bulma-horizontal-card">Unique to <code>bulma-horizontal-card</code></h3>
+<p>These variables are used by horizontal cards only and are not shared with/inherited by normal cards.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
 <th>Description</th>
 <th>Default Value</th>
 </tr>
@@ -128,23 +235,19 @@
 <tbody>
 <tr>
 <td><code>$hcard-image-default-size</code></td>
-<td>Default width of the <code>.card-image</code> in horizontal cards</td>
+<td>Width of the <code>.card-image</code> in horizontal cards</td>
 <td><code>12.5%</code></td>
 </tr>
 </tbody>
 </table>
-<article class="message is-primary">
-  <div class="message-body">
-		<strong>TO-DO</strong>: Add abstraction variables to horizontal cards to allow more granular customization.
-  </div>
-</article>
+
 </div>
 
     </div>
     </div>
   </section>
   <footer class="footer">
-    <p class="has-text-centered">Docs built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/fae146a86b043548e12ab9c63a212ea4a45bddbb">fae146a</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/fae146a86b043548e12ab9c63a212ea4a45bddbb">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
+    <p class="has-text-centered">Docs built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/d2062408b7b4cf2de038ea62b6f0da5a40185bc8">d206240</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/d2062408b7b4cf2de038ea62b6f0da5a40185bc8">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
   </footer>
   </body>
 </html>
