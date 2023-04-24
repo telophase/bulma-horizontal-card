@@ -44,11 +44,32 @@ You can find the raw SASS at `../node_modules/@telophase/bulma-horizontal-card/s
 
 ## Variables
 
-### Unique to `bulma-horizontal-card`
-| Syntax | Description | Default Value |
-| --- | ----------- | ---- |
-| `$hcard-image-default-size` | Default width of the `.card-image` in horizontal cards | `12.5%` |
+### General Variables
+To provide room to style or tweak horizontal cards separately from "normal" vertical cards, horizontal cards use unique variables for colors, radii, etc.
 
-{{% message color="primary" %}}
-**TO-DO**: Add abstraction variables to horizontal cards to allow more granular customization.
-{{% /message %}}
+By default, these are mapped to the [same variables that normal cards use](https://bulma.io/documentation/components/card/#variables) (the "Equivalent" column in this chart).
+
+| Name | Description | Equivalent | Default Value
+| --- | ----------- | ---- | ---- |
+| `$hcard-color` | Card text color. | `$card-color` | `$text` |
+| `$hcard-background-color` | Card background color. | `$card-background-color` | `$scheme-main` |
+|`$hcard-shadow` | Card shadows. | `$card-shadow` | `$shadow` |
+|`$hcard-radius` | Card radius (roundness). | `$card-radius` | `0.25rem` |
+`$hcard-header-background-color`|Background color for card headers. | `$card-header-background-color` | `transparent` |
+| `$hcard-header-color`| Card header text color. | `$card-header-color` | `$text-strong` |
+| `$hcard-header-padding`| Text padding in card headers. | `$card-header-padding`| `0.75rem 1rem`|
+| `$hcard-header-shadow`| Shadows for card headers. | `$card-header-shadows`| `0 0.125em 0.25em rgba($scheme-invert, 0.1)`|
+| `$hcard-header-weight` | Font weight for card header text. | `$card-header-weight`| `$weight-bold`|
+| `$hcard-content-background-color`| Card content background color. | `$card-content-background-color`| `transparent` |
+| `$hcard-content-padding` |  Padding for internal card contents. | `$card-content-padding` | `transparent` |
+| `$hcard-footer-background-color` | Background color for the card footer. | `$card-footer-background-color` | `transparent`|
+| `$hcard-footer-border-top` | Definition of the card footer top border | `$card-footer-border-top` |`1px solid $border-light`|
+| `$hcard-footer-padding` | Padding around card footers. | `$card-footer-padding` | `0.75rem` |
+| `$hcard-media-margin` | Margin around card media | `$card-media-margin` | `$block-spacing` |
+
+### Unique to `bulma-horizontal-card`
+These variables are used by horizontal cards only and are not shared with/inherited by normal cards.
+
+| Name | Description | Default Value |
+| --- | ----------- | ---- |
+| `$hcard-image-default-size` | Width of the `.card-image` in horizontal cards | `12.5%` |
