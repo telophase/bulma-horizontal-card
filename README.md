@@ -22,7 +22,6 @@ So, this extension includes additional utility classes that can force changes in
 
 
 ## to do
-- [ ] Add abstraction variables for customization
 - [ ] Add classes for defining `.card-image` width
 - [ ] Add utility radius classes
 - [ ] Fine-tune responsiveness of horizontal cards
