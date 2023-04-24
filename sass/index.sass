@@ -1,15 +1,33 @@
 @charset "utf-8"
-/* bulma-horizontal-card | v1.0.0 (c) Alex H and contributors | MIT */
+/* bulma-horizontal-card | v1.1.1 (c) Alex H and contributors | MIT */
 
 // VARIABLES ------------
 /// horizontal cards have unique variables just in case someone needs to style
 /// them differently from vertical ones. by default they'll be identical.
 $hcard-color: $card-color !default
 $hcard-background-color: $card-background-color !default
-// TODO - add more/all variables
+$hcard-shadow: $card-shadow !default
+$hcard-radius: $card-radius !default
+
+$hcard-header-background-color: $card-header-background-color !default
+$hcard-header-color: $card-header-color !default
+$hcard-header-padding: $card-header-padding !default
+$hcard-header-shadow: $card-header-shadow !default
+$hcard-header-weight: $card-header-weight !default
+
+$hcard-content-background-color: $card-content-background-color !default
+$hcard-content-padding: $card-content-padding !default
+
+$hcard-footer-background-color: $card-footer-background-color !default
+$hcard-footer-border-top: $card-footer-border-top !default
+$hcard-footer-padding: $card-footer-padding !default
+
+$hcard-media-margin: $card-media-margin !default
 
 /// unique variables
 $hcard-image-default-size: 12.5% !default
+
+// ASSIGN VARIABLES ------------
 
 // STYLES ------------
 .content
@@ -25,15 +43,63 @@ $hcard-image-default-size: 12.5% !default
       margin-bottom: 0
 
 .card
-  .media:not(:last-child)
-    margin-bottom: 0.75rem
-
   &.is-horizontal
+    margin-bottom: $hcard-media-margin
+    background-color: $hcard-background-color
+    border-radius: $hcard-radius
+    box-shadow: $hcard-shadow
+    color: $hcard-color
     display: flex
     flex-flow: row wrap
     flex-basis: 50ex
     flex-grow: 0
     flex-shrink: 1
+
+    .media:not(:last-child)
+      margin-bottom: $card-media-margin
+    
+    %card-item
+      &:first-child
+        border-top-left-radius: $hcard-radius
+        border-top-right-radius: $hcard-radius
+      &:last-child
+        border-bottom-left-radius: $hcard-radius
+        border-bottom-right-radius: $hcard-radius
+
+    .card-image
+      &:first-child
+       img
+        border-top-left-radius: $hcard-radius
+        border-top-right-radius: $hcard-radius
+      &:last-child
+        img
+         border-bottom-left-radius: $hcard-radius
+         border-bottom-right-radius: $hcard-radius
+    
+    .card-header
+      background-color: $hcard-header-background-color
+      box-shadow: $hcard-header-shadow
+
+    .card-header-title
+      color: $hcard-header-color
+      font-weight: $hcard-header-weight
+       padding: $hcard-header-padding
+
+    .card-header-icon
+      padding: $hcard-header-padding
+
+    .card-content
+      background-color: $hcard-content-background-color
+      padding: $hcard-content-padding
+
+    .card-footer
+      background-color: $hcard-footer-background-color
+      border-top: $hcard-footer-border-top
+
+    .card-footer-item
+      padding: $hcard-footer-padding
+      &:not(:last-child)
+        +ltr-property("border", $hcard-footer-border-top)
 
     /// for external, wide header placed outside card-content and before card-image
     header.card-header:first-child
@@ -63,9 +129,9 @@ $hcard-image-default-size: 12.5% !default
           height: 100%
           object-fit: cover
           object-position: center
-          border-top-left-radius: $card-radius
+          border-top-left-radius: $hcard-radius
           border-bottom-right-radius: 0
-          border-bottom-left-radius: $card-radius
+          border-bottom-left-radius: $hcard-radius
           border-top-right-radius: 0
       &.is-right
         /// must use "order" instead of "flex-direction" since flex-direction 
@@ -73,9 +139,9 @@ $hcard-image-default-size: 12.5% !default
         order: 2
         .image
           img
-            border-top-right-radius: $card-radius
+            border-top-right-radius: $hcard-radius
             border-bottom-left-radius: 0
-            border-bottom-right-radius: $card-radius
+            border-bottom-right-radius: $hcard-radius
             border-top-left-radius: 0
             
     /// force 0 unit bottom border on the card image when an outer card footer is present
@@ -101,16 +167,16 @@ $hcard-image-default-size: 12.5% !default
       position: relative
       /// inline card header
       header.card-header
-        margin-top: -$card-content-padding
-        margin-left: -$card-content-padding 
-        margin-bottom: $card-content-padding 
-        margin-right: -$card-content-padding
+        margin-top: -$hcard-content-padding
+        margin-left: -$hcard-content-padding 
+        margin-bottom: $hcard-content-padding 
+        margin-right: -$hcard-content-padding
       /// inline card footer
       footer.card-footer
-        margin-top: $card-content-padding 
-        margin-left: -$card-content-padding 
-        margin-bottom: -$card-content-padding 
-        margin-right: -$card-content-padding
+        margin-top: $hcard-content-padding 
+        margin-left: -$hcard-content-padding 
+        margin-bottom: -$hcard-content-padding 
+        margin-right: -$hcard-content-padding
 
         /// allow optional forcing of the inline footer to stick to the bottom
         /// of the card, in cases where the image will make the card longer than
