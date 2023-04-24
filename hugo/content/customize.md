@@ -29,7 +29,7 @@ After you've installed [`bulma-horizontal-card` via NPM](../install/#via-npm-for
 `bulma-horizontal-card` should now be built into your SASS and any compiled CSS from it.
 
 ## Edit SASS from NPM
-Depedening on your `NODE_ENV` settings, development dependencies for `bulma-horizontal-card` may not have been installed. Run the following code to install them explicitly. This will install Bulma, [Dart SASS](https://www.npmjs.com/package/sass), and CSS-Minify.
+Depedening on your `NODE_ENV` settings, development dependencies for `bulma-horizontal-card` may not have been installed. Run the following code to install them explicitly. This will install Bulma and [Dart SASS](https://www.npmjs.com/package/sass).
 
 ```sh
 npm i @telophase/bulma-horizontal-card --only=dev

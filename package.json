@@ -1,11 +1,11 @@
 {
   "name": "@telophase/bulma-horizontal-card",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A Bulma extension to support horizontal cards using the native card HTML structure.",
   "main": "sass/index.sass",
   "scripts": {
     "css-build": "sass sass/bulma-horizontal-card.scss css/bulma-horizontal-card.css",
-    "css-min": "css-minify -f css/bulma-horizontal-card.css -o css/"
+    "css-min": "sass --style=compressed sass/bulma-horizontal-card.scss css/bulma-horizontal-card.min.css"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,6 @@
   "license": "MIT-Modern-Variant",
   "devDependencies": {
     "bulma": "^0.9.4",
-    "css-minify": "^2.0.0",
     "sass": "^1.62.0"
   },
   "dependencies": {
