@@ -95,7 +95,7 @@
   margin-bottom: 1.5rem;
 }
 
-/* bulma-horizontal-card | v1.0.0 (c) Alex H and contributors | MIT */
+/* bulma-horizontal-card | v1.1.1 (c) Alex H and contributors | MIT */
 .content .card figure.image {
   margin-left: 0;
   margin-right: 0;
@@ -104,15 +104,62 @@
   margin-bottom: 0;
 }
 
-.card .media:not(:last-child) {
-  margin-bottom: 0.75rem;
-}
 .card.is-horizontal {
+  margin-bottom: 1.5rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  color: hsl(0, 0%, 29%);
   display: flex;
   flex-flow: row wrap;
   flex-basis: 50ex;
   flex-grow: 0;
   flex-shrink: 1;
+}
+.card.is-horizontal .media:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.card.is-horizontal .card-header:first-child, .card.is-horizontal .card-content:first-child, .card.is-horizontal .card-footer:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.card.is-horizontal .card-header:last-child, .card.is-horizontal .card-content:last-child, .card.is-horizontal .card-footer:last-child {
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.card.is-horizontal .card-image:first-child img {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.card.is-horizontal .card-image:last-child img {
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.card.is-horizontal .card-header {
+  background-color: transparent;
+  box-shadow: 0 0.125em 0.25em rgba(10, 10, 10, 0.1);
+}
+.card.is-horizontal .card-header-title {
+  color: hsl(0, 0%, 21%);
+  font-weight: 700;
+  font-weight-padding: 0.75rem 1rem;
+}
+.card.is-horizontal .card-header-icon {
+  padding: 0.75rem 1rem;
+}
+.card.is-horizontal .card-content {
+  background-color: transparent;
+  padding: 1.5rem;
+}
+.card.is-horizontal .card-footer {
+  background-color: transparent;
+  border-top: 1px solid hsl(0, 0%, 93%);
+}
+.card.is-horizontal .card-footer-item {
+  padding: 0.75rem;
+}
+.card.is-horizontal .card-footer-item:not(:last-child) {
+  border-right: 1px solid hsl(0, 0%, 93%);
 }
 .card.is-horizontal header.card-header:first-child {
   flex-grow: 1;
