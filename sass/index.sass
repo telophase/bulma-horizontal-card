@@ -1,33 +1,30 @@
 @charset "utf-8"
-/* bulma-horizontal-card | v1.1.2 (c) Alex H and contributors | MIT */
+/* bulma-horizontal-card | v1.2.2 (c) Alex H and contributors | MIT */
 
 // VARIABLES ------------
-/// horizontal cards have unique variables just in case someone needs to style
-/// them differently from vertical ones. by default they'll be identical.
+/// horizontal cards have unique variables just in case they need to be styled
+/// differently from vertical ones. useful for if you are adapting them to be
+/// used with an already highly-customized bulma theme.
+
+/// by default, however, they'll be identical.
 $hcard-color: $card-color !default
 $hcard-background-color: $card-background-color !default
 $hcard-shadow: $card-shadow !default
 $hcard-radius: $card-radius !default
-
 $hcard-header-background-color: $card-header-background-color !default
 $hcard-header-color: $card-header-color !default
 $hcard-header-padding: $card-header-padding !default
 $hcard-header-shadow: $card-header-shadow !default
 $hcard-header-weight: $card-header-weight !default
-
 $hcard-content-background-color: $card-content-background-color !default
 $hcard-content-padding: $card-content-padding !default
-
 $hcard-footer-background-color: $card-footer-background-color !default
 $hcard-footer-border-top: $card-footer-border-top !default
 $hcard-footer-padding: $card-footer-padding !default
-
 $hcard-media-margin: $card-media-margin !default
 
 /// unique variables
 $hcard-image-default-size: 12.5% !default
-
-// ASSIGN VARIABLES ------------
 
 // STYLES ------------
 .content
@@ -54,6 +51,15 @@ $hcard-image-default-size: 12.5% !default
     flex-basis: 50ex
     flex-grow: 0
     flex-shrink: 1
+
+    .card-image.is-radiusless-bottom
+      .image
+        img 
+          /// extra class to strip radius off card image
+          /// USE WITH CARDS THAT HAVE A BLOCK FOOTER TO ENSURE THEY LOOK 
+          /// CORRECT ON FIREFOX / GECKO-BASED BROWSERS.
+          border-bottom-left-radius: 0 !important
+          border-bottom-right-radius: 0 !important
 
     .media:not(:last-child)
       margin-bottom: $card-media-margin
@@ -146,7 +152,7 @@ $hcard-image-default-size: 12.5% !default
             
     /// force 0 unit bottom border on the card image when an outer card footer is present
     /// (when a footer.card-footer is present as a direct child of .card)
-    /// using :has. :has is still not completely supported in firefox :'(
+    /// using :has. :has is still not completely supported in firefox/gecko :'(
     .card-image:has(~ footer.card-footer)
         .image
           img
