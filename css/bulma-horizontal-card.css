@@ -95,7 +95,7 @@
   margin-bottom: 1.5rem;
 }
 
-/* bulma-horizontal-card | v1.1.2 (c) Alex H and contributors | MIT */
+/* bulma-horizontal-card | v1.2.2 (c) Alex H and contributors | MIT */
 .content .card figure.image {
   margin-left: 0;
   margin-right: 0;
@@ -115,6 +115,10 @@
   flex-basis: 50ex;
   flex-grow: 0;
   flex-shrink: 1;
+}
+.card.is-horizontal .card-image.is-radiusless-bottom .image img {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 .card.is-horizontal .media:not(:last-child) {
   margin-bottom: 1.5rem;
