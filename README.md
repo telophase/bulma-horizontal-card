@@ -18,12 +18,12 @@ This extension makes use of the [CSS pseudo-class `:has()`](https://developer.mo
 
 `:has()` is supported in Chrome, Edge, Opera, and Safari by default, and major mobile browers, but [not in Firefox without enabling a special flag](https://caniuse.com/css-has) (as of writing). It is NOT supported in any version of Internet Explorer.
 
-So, this extension includes additional utility classes that can force changes in the `border-radius` that the use of `:has()` otherwise would have. Just manually add them to your `.card-image` element. See the documentation for details.
+So, this extension includes an additional utility class that can force the `.card-image` to be correct. See [usage](https://dev.gimon.zone/bulma-horizontal-card/~site/usage/#fix-block-footers-on-firefox-with-is-radiusless-bottom) for more information.
+
 
 
 ## to do
 - [ ] Add classes for defining `.card-image` width
-- [ ] Add utility radius classes
 - [ ] Fine-tune responsiveness of horizontal cards
 - [ ] Improve responsiveness of the sticky inline-footer
 
