@@ -1,6 +1,6 @@
 {
   "name": "@telophase/bulma-horizontal-card",
-  "version": "1.1.2",
+  "version": "1.2.2",
   "description": "A Bulma extension to support horizontal cards using the native card HTML structure.",
   "main": "sass/index.sass",
   "scripts": {
