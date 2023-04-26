@@ -103,12 +103,6 @@ jobs:
     sourcePath: docs/
     artifacts: '**'
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
-  triggers:
-  - !DependencyFinishedTrigger
-    projects: bulma-horizontal-card
-  jobDependencies:
-  - jobName: Build Documentation
-    requireSuccessful: true
   retryCondition: never
   maxRetries: 3
   retryDelay: 30
