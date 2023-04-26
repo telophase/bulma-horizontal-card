@@ -68,14 +68,20 @@
         <li><a href="#image-alignment">Image Alignment</a></li>
         <li><a href="#headers-and-footers">Headers and Footers</a>
           <ul>
-            <li><a href="#block">Block</a></li>
-            <li><a href="#inline">Inline</a></li>
-            <li><a href="#special-class-is-forced-bottom">Special Class <code>.is-forced-bottom</code></a></li>
+            <li><a href="#block">Block</a>
+              <ul>
+                <li><a href="#fix-block-footers-on-firefox-with-is-radiusless-bottom">Fix Block Footers on Firefox with <code>.is-radiusless-bottom</code></a></li>
+              </ul>
+            </li>
+            <li><a href="#inline">Inline</a>
+              <ul>
+                <li><a href="#special-class-is-forced-bottom">Special Class <code>.is-forced-bottom</code></a></li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#border-radius-helper-classes"><code>border-radius</code> Helper Classes</a></li>
     <li><a href="#use-with-image-ratio-classes">Use with Image Ratio Classes</a></li>
     <li><a href="#notes-on-responsiveness">Notes on Responsiveness</a></li>
   </ul>
@@ -105,7 +111,7 @@
 		<strong>Note</strong>: Horizontal cards are expected to have at least a <code>.card-image</code> element <em>and</em> a <code>.card-content</code> element. This extension relies on this assumption to correctly style horizontal cards. Do not use <code>.is-horizontal</code> with  cards that do not contain both elements. Vertical (normal) cards will work best.
   </div>
 </article>
-<h2 id="basic-usage">Basic Usage</h2>
+<h1 id="basic-usage">Basic Usage</h1>
 <p>To make any card horizontal, add the class <code>.is-horizontal</code> to your <code>.card</code> element.</p>
 
 <div class="columns">
@@ -178,7 +184,7 @@
 </div>
 </div>
 
-<h3 id="image-alignment">Image Alignment</h3>
+<h2 id="image-alignment">Image Alignment</h2>
 <p>By default, the <code>.card-image</code> element is aligned to the left. The <code>.card-image</code> can also be placed on the right by adding the class <code>.is-right</code> to the <code>.card-image</code> element.</p>
 
 <div class="columns">
@@ -251,14 +257,14 @@
 </div>
 </div>
 
-<h3 id="headers-and-footers">Headers and Footers</h3>
+<h2 id="headers-and-footers">Headers and Footers</h2>
 <p>Horizontal cards fully support the use of card header (<code>header.card-header</code>) and card footer (<code>footer.card-footer</code>) elements. Depending on where they are placed inside the <code>.card</code> div element, they will render as <em>inline</em> or <em>block</em>. You can mix and match inline and block headers/footers on the same card.</p>
 <article class="message is-info">
   <div class="message-body">
 		<strong>Note</strong>: Header and footer behaviour relies on what element the header and footer are. Make sure your headers are <code>&lt;header&gt;</code> elements, and your footers are <code>&lt;footer&gt;</code> elements.
   </div>
 </article>
-<h4 id="block">Block</h4>
+<h3 id="block">Block</h3>
 <p>If you place your <code>.card-header</code> <em>outside</em> of <code>.card-content</code> and <em>before</em> <code>.card-image</code>, and/or you place your <code>.card-footer</code> <em>outside</em> of and <em>after</em> <code>.card-content</code>, you will get a full-width header or footer. It will appear outside of your <code>.card-image</code>, above or below, and span the full width of the card.</p>
 
 <div class="columns">
@@ -359,7 +365,180 @@
 </div>
 </div>
 
-<h4 id="inline">Inline</h4>
+<h4 id="fix-block-footers-on-firefox-with-is-radiusless-bottom">Fix Block Footers on Firefox with <code>.is-radiusless-bottom</code></h4>
+<p>The removal of the bottom border radius on the <code>.card-image</code> when a block footer is used makes use of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:has">CSS pseudo-class <code>:has()</code></a>.</p>
+<p><code>:has()</code> is supported in Chrome, Edge, Opera, and Safari by default, and major mobile browers, but <a href="https://caniuse.com/css-has">not in Firefox without enabling a special flag</a> (as of writing). It is NOT supported in any version of Internet Explorer.</p>
+<p>To counteract this, special class <code>.is-radiusless-bottom</code> can be added to the <code>.card-image</code>.</p>
+<article class="message is-info">
+  <div class="message-body">
+		It is strongly recommended to add this class to all horizontal cards with block footers to ensure they display correctly on Firefox and other Gecko-powered browsers.
+  </div>
+</article>
+
+<div class="columns">
+<div class="column is-6">
+<div class="card is-horizontal">
+    
+    <div class="card-image ">
+      <figure class="image">
+        <img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        <p>This card has a block footer. On Firefox, the <code>.card-image</code> may still have a rounded bottom edge.</p>
+
+      </div>
+      
+    </div>
+  
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item">Save</a>
+    <a href="#" class="card-footer-item">Edit</a>
+    <a href="#" class="card-footer-item">Delete</a>
+  </footer>
+  
+</div>
+</div>
+<div class="column is-6">
+	<pre><code>&lt;div class="card is-horizontal"&gt; 
+    &lt;div class="card-image"&gt;
+      &lt;figure class="image"&gt;
+        &lt;img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        /&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="media"&gt;
+        &lt;div class="media-left"&gt;
+          &lt;figure class="image is-48x48"&gt;
+            &lt;img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            /&gt;
+          &lt;/figure&gt;
+        &lt;/div&gt;
+        &lt;div class="media-content"&gt;
+          &lt;p class="title is-4"&gt;John Smith&lt;/p&gt;
+          &lt;p class="subtitle is-6"&gt;@johnsmith&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      &lt;div class="content"&gt;This card has a block footer. On Firefox, the <code>.card-image</code> may still have a rounded bottom edge.&lt;/div&gt;
+      
+    &lt;/div&gt;
+  &lt;footer class="card-footer"&gt;
+    &lt;a href="#" class="card-footer-item"&gt;Save&lt;/a&gt;
+    &lt;a href="#" class="card-footer-item"&gt;Edit&lt;/a&gt;
+    &lt;a href="#" class="card-footer-item"&gt;Delete&lt;/a&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+
+
+<div class="columns">
+<div class="column is-6">
+<div class="card is-horizontal">
+    
+    <div class="card-image is-radiusless-bottom">
+      <figure class="image">
+        <img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        <p>This card has a block footer. This card has class <code>.is-radiusless-bottom</code> applied to the <code>.card-image</code>. On Firefox, there should be no rounded edges on the <code>.card-image</code>.</p>
+
+      </div>
+      
+    </div>
+  
+  <footer class="card-footer">
+    <a href="#" class="card-footer-item">Save</a>
+    <a href="#" class="card-footer-item">Edit</a>
+    <a href="#" class="card-footer-item">Delete</a>
+  </footer>
+  
+</div>
+</div>
+<div class="column is-6">
+	<pre><code>&lt;div class="card is-horizontal"&gt; 
+    &lt;div class="card-image is-radiusless-bottom"&gt;
+      &lt;figure class="image"&gt;
+        &lt;img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        /&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="media"&gt;
+        &lt;div class="media-left"&gt;
+          &lt;figure class="image is-48x48"&gt;
+            &lt;img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            /&gt;
+          &lt;/figure&gt;
+        &lt;/div&gt;
+        &lt;div class="media-content"&gt;
+          &lt;p class="title is-4"&gt;John Smith&lt;/p&gt;
+          &lt;p class="subtitle is-6"&gt;@johnsmith&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      &lt;div class="content"&gt;This card has a block footer. This card has class <code>.is-radiusless-bottom</code> applied to the <code>.card-image</code>. On Firefox, there should be no rounded edges on the <code>.card-image</code>.&lt;/div&gt;
+      
+    &lt;/div&gt;
+  &lt;footer class="card-footer"&gt;
+    &lt;a href="#" class="card-footer-item"&gt;Save&lt;/a&gt;
+    &lt;a href="#" class="card-footer-item"&gt;Edit&lt;/a&gt;
+    &lt;a href="#" class="card-footer-item"&gt;Delete&lt;/a&gt;
+  &lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+
+<h3 id="inline">Inline</h3>
 <p>If you place your <code>.card-header</code> or <code>.card-footer</code> elements <em>inside</em> <code>.card-content</code>, you will get an inline header or footer. It will be inline with your content and next to the <code>.card-image</code>.</p>
 
 <div class="columns">
@@ -622,13 +801,7 @@
   </div>
 </article>
 <hr />
-<h2 id="border-radius-helper-classes"><code>border-radius</code> Helper Classes</h2>
-<article class="message is-primary">
-  <div class="message-body">
-		<strong>TO-DO</strong>: Add helper classes.
-  </div>
-</article>
-<h2 id="use-with-image-ratio-classes">Use with Image Ratio Classes</h2>
+<h1 id="use-with-image-ratio-classes">Use with Image Ratio Classes</h1>
 <p>Bulma has several <a href="https://bulma.io/documentation/elements/image/#responsive-images-with-ratios">responsive image aspect ratio classes (ratio modifiers)</a> that define how images are displayed responsively based only on dimensional ratio.</p>
 <p>By default, very long or very wide images may appear too large/small as <code>.card-image</code>. For horizontal <code>.card-image</code>s, these classes alter the apparent height without altering the image&rsquo;s actual dimensions (ie. no distortion).</p>
 <p>These classes can be used to manipulate the height of the <code>.card-image</code>. Simply apply these classes to the <code>figure.image</code> element inside the <code>.card-image</code> div element.</p>
@@ -770,7 +943,7 @@
 
 </div>
 
-<h2 id="notes-on-responsiveness">Notes on Responsiveness</h2>
+<h1 id="notes-on-responsiveness">Notes on Responsiveness</h1>
 <p>Horizontal cards are based on CSS flexboxes, just like the rest of Bulma.</p>
 <article class="message is-primary">
   <div class="message-body">
@@ -783,7 +956,7 @@
     </div>
   </section>
   <footer class="footer">
-    <p class="has-text-centered">Docs built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/fae146a86b043548e12ab9c63a212ea4a45bddbb">fae146a</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/fae146a86b043548e12ab9c63a212ea4a45bddbb">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
+    <p class="has-text-centered">Docs built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/9f9e19104ebc4967cf0f0bffb8880b1fca106983">9f9e191</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/9f9e19104ebc4967cf0f0bffb8880b1fca106983">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
   </footer>
   </body>
 </html>
