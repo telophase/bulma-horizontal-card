@@ -17,17 +17,12 @@ A [Bulma CSS](https://github.com/jgthms/bulma) extension to support horizontal c
 
 ## notices
 
-{{% message color="warning" title="NOITCE: documentation incomplete" %}}
-**THIS DOCUMENTATION IS A WORK IN PROGRESS.**
-{{% /message %}}
-
-
 {{% message color="danger" title="WARNING: potential compatibility issues" %}}
 This extension makes use of the [CSS pseudo-class `:has()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:has) in order to achieve automatic/contextual control of the `.card-image`'s `border-radius`. Specifically, it is used in a single case to control the removal of the bottom `border-radius` from the `.card-image` when a `footer.card-footer` element is present as a child of `.card`. This was the best way I could think to implement this.
 
 `:has()` is supported in Chrome, Edge, Opera, and Safari by default, and major mobile browers, but [not in Firefox without enabling a special flag](https://caniuse.com/css-has) (as of writing). It is NOT supported in any version of Internet Explorer.
 
-So, this extension includes additional utility classes that can force changes in the `border-radius` that the use of `:has()` otherwise would have. Just manually add them to your `.card-image` element.
+So, this extension includes an additional utility class that can force the `.card-image` to be correct. See [usage](usage/#fix-block-footers-on-firefox-with-is-radiusless-bottom) for more information.
 {{% /message %}}
 
 ## contributing

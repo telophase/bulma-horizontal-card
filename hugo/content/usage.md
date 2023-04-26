@@ -7,7 +7,7 @@ How to use this extension.
 **Note**: Horizontal cards are expected to have at least a `.card-image` element *and* a `.card-content` element. This extension relies on this assumption to correctly style horizontal cards. Do not use `.is-horizontal` with  cards that do not contain both elements. Vertical (normal) cards will work best.
 {{% /message %}}
 
-## Basic Usage
+# Basic Usage
 
 To make any card horizontal, add the class `.is-horizontal` to your `.card` element.
 
@@ -16,29 +16,47 @@ This is a card.
 {{% /card %}}
 
 
-
-### Image Alignment
+## Image Alignment
 By default, the `.card-image` element is aligned to the left. The `.card-image` can also be placed on the right by adding the class `.is-right` to the `.card-image` element.
 
 {{% card  image-classes="is-right" %}}
 This is a card with a right card image.
 {{% /card %}}
 
-### Headers and Footers
+## Headers and Footers
 Horizontal cards fully support the use of card header (`header.card-header`) and card footer (`footer.card-footer`) elements. Depending on where they are placed inside the `.card` div element, they will render as *inline* or *block*. You can mix and match inline and block headers/footers on the same card.
 
 {{% message color="info" %}}
 **Note**: Header and footer behaviour relies on what element the header and footer are. Make sure your headers are `<header>` elements, and your footers are `<footer>` elements.
 {{% /message %}}
 
-#### Block
+### Block
 If you place your `.card-header` *outside* of `.card-content` and *before* `.card-image`, and/or you place your `.card-footer` *outside* of and *after* `.card-content`, you will get a full-width header or footer. It will appear outside of your `.card-image`, above or below, and span the full width of the card.
 
 {{% card  outline-header="yes" outline-footer="yes" %}}
 This card has a block header and a block footer.
 {{% /card %}}
 
-#### Inline
+#### Fix Block Footers on Firefox with `.is-radiusless-bottom`
+The removal of the bottom border radius on the `.card-image` when a block footer is used makes use of the [CSS pseudo-class `:has()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:has).
+
+`:has()` is supported in Chrome, Edge, Opera, and Safari by default, and major mobile browers, but [not in Firefox without enabling a special flag](https://caniuse.com/css-has) (as of writing). It is NOT supported in any version of Internet Explorer.
+
+To counteract this, special class `.is-radiusless-bottom` can be added to the `.card-image`. 
+
+{{% message color="info" %}}
+It is strongly recommended to add this class to all horizontal cards with block footers to ensure they display correctly on Firefox and other Gecko-powered browsers.
+{{% /message %}}
+
+{{% card outline-footer="yes" %}}
+This card has a block footer. On Firefox, the `.card-image` may still have a rounded bottom edge.
+{{% /card %}}
+
+{{% card outline-footer="yes" image-classes="is-radiusless-bottom" %}}
+This card has a block footer. This card has class `.is-radiusless-bottom` applied to the `.card-image`. On Firefox, there should be no rounded edges on the `.card-image`.
+{{% /card %}}
+
+### Inline
 If you place your `.card-header` or `.card-footer` elements *inside* `.card-content`, you will get an inline header or footer. It will be inline with your content and next to the `.card-image`.
 
 {{% card  inline-header="yes" inline-footer="yes" force-bottom="yes" %}}
@@ -58,12 +76,7 @@ See the examples below. Check card behaviour per screen size before using this c
 
 ----
 
-## `border-radius` Helper Classes
-{{% message color="primary" %}}
-**TO-DO**: Add helper classes.
-{{% /message %}}
-
-## Use with Image Ratio Classes
+# Use with Image Ratio Classes
 Bulma has several [responsive image aspect ratio classes (ratio modifiers)](https://bulma.io/documentation/elements/image/#responsive-images-with-ratios) that define how images are displayed responsively based only on dimensional ratio. 
 
 By default, very long or very wide images may appear too large/small as `.card-image`. For horizontal `.card-image`s, these classes alter the apparent height without altering the image's actual dimensions (ie. no distortion).
@@ -80,7 +93,7 @@ These classes can be used to manipulate the height of the `.card-image`. Simply 
 
 {{% card-compare-imageratios %}}
 
-## Notes on Responsiveness
+# Notes on Responsiveness
 Horizontal cards are based on CSS flexboxes, just like the rest of Bulma.
 
 {{% message color="primary" %}}

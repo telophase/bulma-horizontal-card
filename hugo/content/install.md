@@ -11,7 +11,7 @@ npm i @telophase/bulma-horizontal-card
 ```
 <br/>
 
-See the [Customize](customize) page for more information about variables and using in your Bulma project.
+See the [Customize](../customize) page for more information about variables and using in your Bulma project.
 
 ## Via CDN as precompiled
 The `bulma-horizontal-card` extension's compiled CSS is available via jsDeliver's global CDN. Be sure you are also importing Bulma's CSS as well.
@@ -37,4 +37,8 @@ The `bulma-horizontal-card` extension's compiled CSS is available via jsDeliver'
 ```
 
 ## From Github as precompiled
-Download the [repository tarball](https://github.com/telophase/bulma-horizontal-card/archive/refs/heads/main.zip) or [clone the repository](https://github.com/telophase/bulma-horizontal-card.git) to your local machine. Move the files to the location of your choice, and link to them as needed.
+Download the [repository tarball](https://github.com/telophase/bulma-horizontal-card/archive/refs/heads/main.zip) or clone the repository to your local machine. Move the files to the location of your choice, and link to them as needed.
+
+```sh
+git clone https://github.com/telophase/bulma-horizontal-card.git
+```
