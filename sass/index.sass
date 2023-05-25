@@ -1,5 +1,5 @@
 @charset "utf-8"
-/* bulma-horizontal-card | v1.2.2 (c) Alex H and contributors | MIT */
+/* bulma-horizontal-card | v1.3.2 (c) Alex H and contributors | MIT */
 
 // VARIABLES ------------
 /// horizontal cards have unique variables just in case they need to be styled
@@ -25,6 +25,9 @@ $hcard-media-margin: $card-media-margin !default
 
 /// unique variables
 $hcard-image-default-size: 12.5% !default
+$hcard-image-small-size: $hcard-image-default-size * 0.5 !default
+$hcard-image-medium-size: $hcard-image-default-size * 1.5 !default
+$hcard-image-large-size: $hcard-image-default-size * 2.5 !default
 
 // STYLES ------------
 .content
@@ -46,11 +49,13 @@ $hcard-image-default-size: 12.5% !default
     border-radius: $hcard-radius
     box-shadow: $hcard-shadow
     color: $hcard-color
-    display: flex
-    flex-flow: row wrap
-    flex-basis: 50ex
-    flex-grow: 0
-    flex-shrink: 1
+    
+    @include from($tablet) 
+      display: flex
+      flex-flow: row wrap
+      flex-basis: 50ex
+      flex-grow: 0
+      flex-shrink: 1
 
     .card-image.is-radiusless-bottom
       .image
@@ -58,29 +63,32 @@ $hcard-image-default-size: 12.5% !default
           /// extra class to strip radius off card image
           /// USE WITH CARDS THAT HAVE A BLOCK FOOTER TO ENSURE THEY LOOK 
           /// CORRECT ON FIREFOX / GECKO-BASED BROWSERS.
-          border-bottom-left-radius: 0 !important
-          border-bottom-right-radius: 0 !important
+            border-bottom-left-radius: 0 !important
+            border-bottom-right-radius: 0 !important
 
     .media:not(:last-child)
       margin-bottom: $card-media-margin
     
     %card-item
       &:first-child
-        border-top-left-radius: $hcard-radius
-        border-top-right-radius: $hcard-radius
+        @include from($tablet) 
+          border-top-left-radius: $hcard-radius
+          border-top-right-radius: $hcard-radius
       &:last-child
-        border-bottom-left-radius: $hcard-radius
-        border-bottom-right-radius: $hcard-radius
+        @include from($tablet) 
+          border-bottom-left-radius: $hcard-radius
+          border-bottom-right-radius: $hcard-radius
 
-    .card-image
-      &:first-child
-       img
-        border-top-left-radius: $hcard-radius
-        border-top-right-radius: $hcard-radius
-      &:last-child
-        img
-         border-bottom-left-radius: $hcard-radius
-         border-bottom-right-radius: $hcard-radius
+    @include from($tablet) 
+      .card-image
+        &:first-child
+         img
+            border-top-left-radius: $hcard-radius
+            border-top-right-radius: $hcard-radius
+        &:last-child
+          img
+             border-bottom-left-radius: $hcard-radius
+             border-bottom-right-radius: $hcard-radius
     
     .card-header
       background-color: $hcard-header-background-color
@@ -122,9 +130,10 @@ $hcard-image-default-size: 12.5% !default
 
     /// style card-images
     .card-image, .card-image.is-left
-      flex: 2
-      flex-shrink: 2
-      flex-basis: $hcard-image-default-size
+      @include from($tablet)
+        flex: 2
+        flex-shrink: 2
+        flex-basis: $hcard-image-default-size
       .image
         display: block
         position: relative
@@ -135,20 +144,32 @@ $hcard-image-default-size: 12.5% !default
           height: 100%
           object-fit: cover
           object-position: center
-          border-top-left-radius: $hcard-radius
-          border-bottom-right-radius: 0
-          border-bottom-left-radius: $hcard-radius
-          border-top-right-radius: 0
+          @include from($tablet) 
+            border-top-left-radius: $hcard-radius
+            border-bottom-right-radius: 0
+            border-bottom-left-radius: $hcard-radius
+            border-top-right-radius: 0
       &.is-right
         /// must use "order" instead of "flex-direction" since flex-direction 
         /// is relative to language (is-right would be on the left in RTL mode)
         order: 2
         .image
           img
-            border-top-right-radius: $hcard-radius
-            border-bottom-left-radius: 0
-            border-bottom-right-radius: $hcard-radius
-            border-top-left-radius: 0
+            @include from($tablet) 
+              border-top-right-radius: $hcard-radius
+              border-bottom-left-radius: 0
+              border-bottom-right-radius: $hcard-radius
+              border-top-left-radius: 0
+      /// controls the size of the card image
+      /// card-image can also be changed by inline styling flex-basis
+      &.is-large
+        flex-basis: $hcard-image-large-size
+      &.is-medium
+        flex-basis: $hcard-image-medium-size
+      &.is-normal
+        flex-basis: $hcard-image-default-size
+      &.is-small
+        flex-basis: $hcard-image-small-size
             
     /// force 0 unit bottom border on the card image when an outer card footer is present
     /// (when a footer.card-footer is present as a direct child of .card)
@@ -187,9 +208,17 @@ $hcard-image-default-size: 12.5% !default
         /// allow optional forcing of the inline footer to stick to the bottom
         /// of the card, in cases where the image will make the card longer than
         /// by the text alone.
-        /// TODO improve responsiveness of this hack
         &.is-forced-bottom
-          margin-bottom: 0
-          position: absolute
-          bottom: 0
-          width: 100%
+          /// footer behaviour as a mixin for breakpoints
+          @mixin sticky-footer
+            margin-bottom: 0
+            position: absolute
+            bottom: 0
+            width: 100%
+
+          @include from($tablet)        
+            @include sticky-footer
+          /// weird styles only apply until AFTER desktop breakpoint since cards
+          /// now collapse to vertical under tablet size
+          
+              
