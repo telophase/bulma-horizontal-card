@@ -1,6 +1,6 @@
 baseURL = 'https://dev.gimon.zone/bulma-horizontal-card/~site'
 languageCode = 'en-us'
-title = 'bulma-horizontal-card documentation'
+title = 'bulma-horizontal-card Documentation'
 enableGitInfo = true
 
 [markup]
