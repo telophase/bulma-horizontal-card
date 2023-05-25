@@ -95,7 +95,7 @@
   margin-bottom: 1.5rem;
 }
 
-/* bulma-horizontal-card | v1.2.2 (c) Alex H and contributors | MIT */
+/* bulma-horizontal-card | v1.3.2 (c) Alex H and contributors | MIT */
 .content .card figure.image {
   margin-left: 0;
   margin-right: 0;
@@ -110,34 +110,40 @@
   border-radius: 0.25rem;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
   color: hsl(0, 0%, 29%);
-  display: flex;
-  flex-flow: row wrap;
-  flex-basis: 50ex;
-  flex-grow: 0;
-  flex-shrink: 1;
 }
-.card.is-horizontal .card-image.is-radiusless-bottom .image img {
-  border-bottom-left-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
+@media screen and (min-width: 769px) {
+  .card.is-horizontal {
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 50ex;
+    flex-grow: 0;
+    flex-shrink: 1;
+  }
 }
 .card.is-horizontal .media:not(:last-child) {
   margin-bottom: 1.5rem;
 }
-.card.is-horizontal .card-header:first-child, .card.is-horizontal .card-content:first-child, .card.is-horizontal .card-footer:first-child {
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
+@media screen and (min-width: 769px) {
+  .card.is-horizontal .card-header:first-child, .card.is-horizontal .card-content:first-child, .card.is-horizontal .card-footer:first-child {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
 }
-.card.is-horizontal .card-header:last-child, .card.is-horizontal .card-content:last-child, .card.is-horizontal .card-footer:last-child {
-  border-bottom-left-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+@media screen and (min-width: 769px) {
+  .card.is-horizontal .card-header:last-child, .card.is-horizontal .card-content:last-child, .card.is-horizontal .card-footer:last-child {
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
 }
-.card.is-horizontal .card-image:first-child img {
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-}
-.card.is-horizontal .card-image:last-child img {
-  border-bottom-left-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+@media screen and (min-width: 769px) {
+  .card.is-horizontal .card-image:first-child img {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+  .card.is-horizontal .card-image:last-child img {
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
 }
 .card.is-horizontal .card-header {
   background-color: transparent;
@@ -176,10 +182,12 @@
   flex-basis: 100%;
   order: 99;
 }
-.card.is-horizontal .card-image, .card.is-horizontal .card-image.is-left {
-  flex: 2;
-  flex-shrink: 2;
-  flex-basis: 12.5%;
+@media screen and (min-width: 769px) {
+  .card.is-horizontal .card-image, .card.is-horizontal .card-image.is-left {
+    flex: 2;
+    flex-shrink: 2;
+    flex-basis: 12.5%;
+  }
 }
 .card.is-horizontal .card-image .image, .card.is-horizontal .card-image.is-left .image {
   display: block;
@@ -192,19 +200,37 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  border-top-left-radius: 0.25rem;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0.25rem;
-  border-top-right-radius: 0;
+}
+@media screen and (min-width: 769px) {
+  .card.is-horizontal .card-image .image img, .card.is-horizontal .card-image.is-left .image img {
+    border-top-left-radius: 0.25rem;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0.25rem;
+    border-top-right-radius: 0;
+  }
 }
 .card.is-horizontal .card-image.is-right, .card.is-horizontal .card-image.is-left.is-right {
   order: 2;
 }
-.card.is-horizontal .card-image.is-right .image img, .card.is-horizontal .card-image.is-left.is-right .image img {
-  border-top-right-radius: 0.25rem;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0.25rem;
-  border-top-left-radius: 0;
+@media screen and (min-width: 769px) {
+  .card.is-horizontal .card-image.is-right .image img, .card.is-horizontal .card-image.is-left.is-right .image img {
+    border-top-right-radius: 0.25rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0.25rem;
+    border-top-left-radius: 0;
+  }
+}
+.card.is-horizontal .card-image.is-large, .card.is-horizontal .card-image.is-left.is-large {
+  flex-basis: 31.25%;
+}
+.card.is-horizontal .card-image.is-medium, .card.is-horizontal .card-image.is-left.is-medium {
+  flex-basis: 18.75%;
+}
+.card.is-horizontal .card-image.is-normal, .card.is-horizontal .card-image.is-left.is-normal {
+  flex-basis: 12.5%;
+}
+.card.is-horizontal .card-image.is-small, .card.is-horizontal .card-image.is-left.is-small {
+  flex-basis: 6.25%;
 }
 .card.is-horizontal .card-image:has(~ footer.card-footer) .image img {
   border-bottom-right-radius: 0;
@@ -231,11 +257,13 @@
   margin-bottom: -1.5rem;
   margin-right: -1.5rem;
 }
-.card.is-horizontal .card-content footer.card-footer.is-forced-bottom {
-  margin-bottom: 0;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+@media screen and (min-width: 769px) {
+  .card.is-horizontal .card-content footer.card-footer.is-forced-bottom {
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=bulma-horizontal-card.css.map */
