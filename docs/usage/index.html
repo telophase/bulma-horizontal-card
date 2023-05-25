@@ -5,8 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>How to Use - </title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card@1.0.0/css/bulma-horizontal-card.min.css">
+    <title>How to Use - bulma-horizontal-card Documentation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card/css/bulma-horizontal-card.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
   </head>
@@ -66,6 +66,7 @@
     <li><a href="#basic-usage">Basic Usage</a>
       <ul>
         <li><a href="#image-alignment">Image Alignment</a></li>
+        <li><a href="#image-size">Image Size</a></li>
         <li><a href="#headers-and-footers">Headers and Footers</a>
           <ul>
             <li><a href="#block">Block</a>
@@ -83,7 +84,7 @@
       </ul>
     </li>
     <li><a href="#use-with-image-ratio-classes">Use with Image Ratio Classes</a></li>
-    <li><a href="#notes-on-responsiveness">Notes on Responsiveness</a></li>
+    <li><a href="#responsiveness">Responsiveness</a></li>
   </ul>
 </nav>
 </aside>
@@ -94,7 +95,7 @@
   <ul>
     
       <li>
-        <a href="https://dev.gimon.zone/bulma-horizontal-card/~site/">bulma-horizontal-card</a>
+        <a href="https://dev.gimon.zone/bulma-horizontal-card/~site/">Home</a>
       </li>
     
      <li class="is-active">
@@ -257,6 +258,292 @@
 </div>
 </div>
 
+<h2 id="image-size">Image Size</h2>
+<p>The size of <code>.card-image</code> can be controlled by adding the classes <code>.is-small</code>, <code>is-normal</code> (default), <code>is-medium</code>, or <code>is-large</code> to the <code>.card-image</code> element.<br />
+
+<div class="columns">
+<div class="column is-6">
+<div class="card is-horizontal">
+    
+    <div class="card-image is-small">
+      <figure class="image">
+        <img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        <p>This card image is small using class <code>.is-small</code>.</p>
+
+      </div>
+      
+    </div>
+  
+</div>
+</div>
+<div class="column is-6">
+	<pre><code>&lt;div class="card is-horizontal"&gt; 
+    &lt;div class="card-image is-small"&gt;
+      &lt;figure class="image"&gt;
+        &lt;img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        /&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="media"&gt;
+        &lt;div class="media-left"&gt;
+          &lt;figure class="image is-48x48"&gt;
+            &lt;img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            /&gt;
+          &lt;/figure&gt;
+        &lt;/div&gt;
+        &lt;div class="media-content"&gt;
+          &lt;p class="title is-4"&gt;John Smith&lt;/p&gt;
+          &lt;p class="subtitle is-6"&gt;@johnsmith&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      &lt;div class="content"&gt;This card image is small using class <code>.is-small</code>.&lt;/div&gt;
+      
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+<br />
+
+<div class="columns">
+<div class="column is-6">
+<div class="card is-horizontal">
+    
+    <div class="card-image is-normal">
+      <figure class="image">
+        <img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        <p>If you do not include a image size class, the card image will be this size. You can force it with the <code>.is-normal</code> class.</p>
+
+      </div>
+      
+    </div>
+  
+</div>
+</div>
+<div class="column is-6">
+	<pre><code>&lt;div class="card is-horizontal"&gt; 
+    &lt;div class="card-image is-normal"&gt;
+      &lt;figure class="image"&gt;
+        &lt;img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        /&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="media"&gt;
+        &lt;div class="media-left"&gt;
+          &lt;figure class="image is-48x48"&gt;
+            &lt;img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            /&gt;
+          &lt;/figure&gt;
+        &lt;/div&gt;
+        &lt;div class="media-content"&gt;
+          &lt;p class="title is-4"&gt;John Smith&lt;/p&gt;
+          &lt;p class="subtitle is-6"&gt;@johnsmith&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      &lt;div class="content"&gt;If you do not include a image size class, the card image will be this size. You can force it with the <code>.is-normal</code> class.&lt;/div&gt;
+      
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+<br />
+
+<div class="columns">
+<div class="column is-6">
+<div class="card is-horizontal">
+    
+    <div class="card-image is-medium">
+      <figure class="image">
+        <img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        <p>This card image is medium using class <code>.is-medium</code>.</p>
+
+      </div>
+      
+    </div>
+  
+</div>
+</div>
+<div class="column is-6">
+	<pre><code>&lt;div class="card is-horizontal"&gt; 
+    &lt;div class="card-image is-medium"&gt;
+      &lt;figure class="image"&gt;
+        &lt;img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        /&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="media"&gt;
+        &lt;div class="media-left"&gt;
+          &lt;figure class="image is-48x48"&gt;
+            &lt;img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            /&gt;
+          &lt;/figure&gt;
+        &lt;/div&gt;
+        &lt;div class="media-content"&gt;
+          &lt;p class="title is-4"&gt;John Smith&lt;/p&gt;
+          &lt;p class="subtitle is-6"&gt;@johnsmith&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      &lt;div class="content"&gt;This card image is medium using class <code>.is-medium</code>.&lt;/div&gt;
+      
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+<br />
+
+<div class="columns">
+<div class="column is-6">
+<div class="card is-horizontal">
+    
+    <div class="card-image is-large">
+      <figure class="image">
+        <img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        />
+      </figure>
+    </div>
+    <div class="card-content">
+      
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-48x48">
+            <img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            />
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-4">John Smith</p>
+          <p class="subtitle is-6">@johnsmith</p>
+        </div>
+      </div>
+
+      <div class="content">
+        <p>This card image is large using class <code>.is-large</code>.</p>
+
+      </div>
+      
+    </div>
+  
+</div>
+</div>
+<div class="column is-6">
+	<pre><code>&lt;div class="card is-horizontal"&gt; 
+    &lt;div class="card-image is-large"&gt;
+      &lt;figure class="image"&gt;
+        &lt;img
+          src="../pexels-kris-møklebust.jpg"
+          alt="Placeholder image"
+        /&gt;
+      &lt;/figure&gt;
+    &lt;/div&gt;
+    &lt;div class="card-content"&gt;
+      &lt;div class="media"&gt;
+        &lt;div class="media-left"&gt;
+          &lt;figure class="image is-48x48"&gt;
+            &lt;img
+              src="https://bulma.io/images/placeholders/96x96.png"
+              alt="Placeholder image"
+            /&gt;
+          &lt;/figure&gt;
+        &lt;/div&gt;
+        &lt;div class="media-content"&gt;
+          &lt;p class="title is-4"&gt;John Smith&lt;/p&gt;
+          &lt;p class="subtitle is-6"&gt;@johnsmith&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      &lt;div class="content"&gt;This card image is large using class <code>.is-large</code>.&lt;/div&gt;
+      
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+</p>
 <h2 id="headers-and-footers">Headers and Footers</h2>
 <p>Horizontal cards fully support the use of card header (<code>header.card-header</code>) and card footer (<code>footer.card-footer</code>) elements. Depending on where they are placed inside the <code>.card</code> div element, they will render as <em>inline</em> or <em>block</em>. You can mix and match inline and block headers/footers on the same card.</p>
 <article class="message is-info">
@@ -371,7 +658,7 @@
 <p>To counteract this, special class <code>.is-radiusless-bottom</code> can be added to the <code>.card-image</code>.</p>
 <article class="message is-info">
   <div class="message-body">
-		It is strongly recommended to add this class to all horizontal cards with block footers to ensure they display correctly on Firefox and other Gecko-powered browsers.
+		It is strongly recommended to add this class to all horizontal cards with block footers to ensure they display correctly on Firefox and other derived browsers.
   </div>
 </article>
 
@@ -640,6 +927,7 @@
 
 <h4 id="special-class-is-forced-bottom">Special Class <code>.is-forced-bottom</code></h4>
 <p>If your card is too tall, the <code>.card-footer</code> may appear to float inside the card. You can add the class <code>.is-force-bottom</code> to your <code>.card-footer</code>; this will cause it to stick to the bottom of the card. However, because this uses <code>position: absolute;</code>, the forced inline card footer will ignore internal margins and may appear too close to your other <code>.card-content</code>.</p>
+<p>The sticky effect of the class <code>.is-forced-bottom</code> is only active <em>after</em> the tablet breakpoint. It will not apply any unique styles or have a sticky effect on collapsed horizontal cards, even on forced cards with class <code>.is-collapsed</code>.</p>
 <p>See the examples below. Check card behaviour per screen size before using this class.</p>
 
 <div class="columns is-multiline">
@@ -795,16 +1083,11 @@
 
 </div>
 
-<article class="message is-primary">
-  <div class="message-body">
-		<strong>TO-DO</strong>: Improve responsiveness of <code>.is-forced-bottom</code>.
-  </div>
-</article>
 <hr />
 <h1 id="use-with-image-ratio-classes">Use with Image Ratio Classes</h1>
 <p>Bulma has several <a href="https://bulma.io/documentation/elements/image/#responsive-images-with-ratios">responsive image aspect ratio classes (ratio modifiers)</a> that define how images are displayed responsively based only on dimensional ratio.</p>
 <p>By default, very long or very wide images may appear too large/small as <code>.card-image</code>. For horizontal <code>.card-image</code>s, these classes alter the apparent height without altering the image&rsquo;s actual dimensions (ie. no distortion).</p>
-<p>These classes can be used to manipulate the height of the <code>.card-image</code>. Simply apply these classes to the <code>figure.image</code> element inside the <code>.card-image</code> div element.</p>
+<p>These classes can be used to manipulate the height of the <code>.card-image</code>. Simply apply these classes to the <code>figure.image</code> element inside the <code>.card-image</code> div element. (See below)</p>
 <pre tabindex="0"><code>&lt;div class=&#34;card-image&#34;&gt;
     &lt;figure class=&#34;image is-XbyX&#34;&gt;
         &lt;img src=&#34;&#34; alt=&#34;&#34;/&gt;
@@ -943,20 +1226,17 @@
 
 </div>
 
-<h1 id="notes-on-responsiveness">Notes on Responsiveness</h1>
-<p>Horizontal cards are based on CSS flexboxes, just like the rest of Bulma.</p>
-<article class="message is-primary">
-  <div class="message-body">
-		<strong>TO-DO</strong>: Fine-tune horizontal card responsiveness.
-  </div>
-</article>
+<h1 id="responsiveness">Responsiveness</h1>
+<p>Horizontal cards are based on CSS flexboxes, just like the rest of Bulma. Horizontal cards try to follow Bulma&rsquo;s vertical-first philosophy, and so on smaller screens (below the tablet breakpoint) horizontal cards collapse back into &ldquo;vertical&rdquo; cards.</p>
+<p>Horizontal cards do not have interchangable syntax with normal cards. Dedicated CSS classes are used to maintain the different structure of horizontal cards while making them look just like normal vertical cards when collapsed. If you are using Javascript to toggle a horizontal card between vertical and horizontal orientations, <strong>DO NOT remove the <code>.is-horizontal</code> class!</strong></p>
+
 </div>
 
     </div>
     </div>
   </section>
   <footer class="footer">
-    <p class="has-text-centered">Docs built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/9f9e19104ebc4967cf0f0bffb8880b1fca106983">9f9e191</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/9f9e19104ebc4967cf0f0bffb8880b1fca106983">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
+    <p class="has-text-centered">This page built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/c7e2d761a6849b8112bee4a595aa022423a8675d">c7e2d76</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/c7e2d761a6849b8112bee4a595aa022423a8675d">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
   </footer>
   </body>
 </html>

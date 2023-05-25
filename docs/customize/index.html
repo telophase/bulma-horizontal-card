@@ -5,8 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Customize Extension - </title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card@1.0.0/css/bulma-horizontal-card.min.css">
+    <title>Customize Extension - bulma-horizontal-card Documentation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@telophase/bulma-horizontal-card/css/bulma-horizontal-card.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
   </head>
@@ -63,17 +63,13 @@
 	<b>Table of Contents</b>
   <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#install-bulma">Install Bulma</a></li>
+    <li><a href="#import-into-your-sasscss">Import into your SASS/CSS</a></li>
+    <li><a href="#edit-sass-from-npm">Edit SASS from NPM</a></li>
+    <li><a href="#variables">Variables</a>
       <ul>
-        <li><a href="#install-bulma">Install Bulma</a></li>
-        <li><a href="#import-into-your-sasscss">Import into your SASS/CSS</a></li>
-        <li><a href="#edit-sass-from-npm">Edit SASS from NPM</a></li>
-        <li><a href="#variables">Variables</a>
-          <ul>
-            <li><a href="#general-variables">General Variables</a></li>
-            <li><a href="#unique-to-bulma-horizontal-card">Unique to <code>bulma-horizontal-card</code></a></li>
-          </ul>
-        </li>
+        <li><a href="#general-variables">General Variables</a></li>
+        <li><a href="#unique-to-bulma-horizontal-card">Unique to <code>bulma-horizontal-card</code></a></li>
       </ul>
     </li>
   </ul>
@@ -86,7 +82,7 @@
   <ul>
     
       <li>
-        <a href="https://dev.gimon.zone/bulma-horizontal-card/~site/">bulma-horizontal-card</a>
+        <a href="https://dev.gimon.zone/bulma-horizontal-card/~site/">Home</a>
       </li>
     
      <li class="is-active">
@@ -98,11 +94,11 @@
 <div class="content">
 <p class="title">Customize Extension</p>
 <p>How to customize the extension and use it in your Bulma project.</p>
-<h2 id="install-bulma">Install Bulma</h2>
+<h1 id="install-bulma">Install Bulma</h1>
 <p>If you don&rsquo;t already have Bulma installed, it should have been installed when you installed <a href="../install/#via-npm-for-bulma-sass"><code>bulma-horizontal-card</code> via NPM</a> as it is a dependency.</p>
 <p>You can install Bulma manually with:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>npm i bulma
-</span></span></code></pre></div><h2 id="import-into-your-sasscss">Import into your SASS/CSS</h2>
+</span></span></code></pre></div><h1 id="import-into-your-sasscss">Import into your SASS/CSS</h1>
 <p>After you&rsquo;ve installed <a href="../install/#via-npm-for-bulma-sass"><code>bulma-horizontal-card</code> via NPM</a> into your Bulma project directory, you can integrate it into your SCSS/SASS by adding the following line. Place this line <em>after</em> the line(s) that import Bulma (or at minimum, Bulma&rsquo;s <code>components/card.sass</code>)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#75715e">// scss
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">@import</span> <span style="color:#e6db74">&#39;@telophase/bulma-horizontal-card&#39;</span>
@@ -110,7 +106,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">@import</span> <span style="color:#e6db74">@telophase/bulma-horizontal-card</span>
 </span></span></code></pre></div><br>
 <p><code>bulma-horizontal-card</code> should now be built into your SASS and any compiled CSS from it.</p>
-<h2 id="edit-sass-from-npm">Edit SASS from NPM</h2>
+<h1 id="edit-sass-from-npm">Edit SASS from NPM</h1>
 <p>Depedening on your <code>NODE_ENV</code> settings, development dependencies for <code>bulma-horizontal-card</code> may not have been installed. Run the following code to install them explicitly. This will install Bulma and <a href="https://www.npmjs.com/package/sass">Dart SASS</a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>npm i @telophase/bulma-horizontal-card --only<span style="color:#f92672">=</span>dev
 </span></span></code></pre></div><br>
@@ -120,8 +116,8 @@
 		<strong>NOTE</strong>: Node-SASS has been deprecated. The included scripts use Dart SASS command syntax in order to compile CSS. If you wish to use node-SASS anyway, you&rsquo;ll need to edit the scripts in <code>package.json</code>.
   </div>
 </article>
-<h2 id="variables">Variables</h2>
-<h3 id="general-variables">General Variables</h3>
+<h1 id="variables">Variables</h1>
+<h2 id="general-variables">General Variables</h2>
 <p>To provide room to style or tweak horizontal cards separately from &ldquo;normal&rdquo; vertical cards, horizontal cards use unique variables for colors, radii, etc.</p>
 <p>By default, these are mapped to the <a href="https://bulma.io/documentation/components/card/#variables">same variables that normal cards use</a> (the &ldquo;Equivalent&rdquo; column in this chart).</p>
 <table>
@@ -208,7 +204,7 @@
 </tr>
 <tr>
 <td><code>$hcard-footer-border-top</code></td>
-<td>Definition of the card footer top border</td>
+<td>Definition of the card footer top border.</td>
 <td><code>$card-footer-border-top</code></td>
 <td><code>1px solid $border-light</code></td>
 </tr>
@@ -220,13 +216,13 @@
 </tr>
 <tr>
 <td><code>$hcard-media-margin</code></td>
-<td>Margin around card media</td>
+<td>Margin around card media.</td>
 <td><code>$card-media-margin</code></td>
 <td><code>$block-spacing</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="unique-to-bulma-horizontal-card">Unique to <code>bulma-horizontal-card</code></h3>
+<h2 id="unique-to-bulma-horizontal-card">Unique to <code>bulma-horizontal-card</code></h2>
 <p>These variables are used by horizontal cards only and are not shared with/inherited by normal cards.</p>
 <table>
 <thead>
@@ -238,9 +234,24 @@
 </thead>
 <tbody>
 <tr>
+<td><code>$hcard-image-small-size</code></td>
+<td>Width of the <code>.card-image</code> in horizontal cards using <code>.is-small</code></td>
+<td><code>$hcard-image-default-size * 0.5</code></td>
+</tr>
+<tr>
 <td><code>$hcard-image-default-size</code></td>
-<td>Width of the <code>.card-image</code> in horizontal cards</td>
+<td>Width of the <code>.card-image</code> in horizontal cards without modifiers or using <code>.is-normal</code></td>
 <td><code>12.5%</code></td>
+</tr>
+<tr>
+<td><code>$hcard-image-medium-size</code></td>
+<td>Width of the <code>.card-image</code> in horizontal cards using <code>.is-medium</code></td>
+<td><code>$hcard-image-default-size * 1.5</code></td>
+</tr>
+<tr>
+<td><code>$hcard-image-large-size</code></td>
+<td>Width of the <code>.card-image</code> in horizontal cards using <code>.is-large</code></td>
+<td><code>$hcard-image-default-size * 2.5</code></td>
 </tr>
 </tbody>
 </table>
@@ -251,7 +262,7 @@
     </div>
   </section>
   <footer class="footer">
-    <p class="has-text-centered">Docs built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/5be4c8f727f60b0a236a53a712f24e0859cd00bf">5be4c8f</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/5be4c8f727f60b0a236a53a712f24e0859cd00bf">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
+    <p class="has-text-centered">This page built from commit <a href="https://dev.gimon.zone/bulma-horizontal-card/~commits/c7e2d761a6849b8112bee4a595aa022423a8675d">c7e2d76</a> (<a href="https://github.com/telophase/bulma-horizontal-card/commit/c7e2d761a6849b8112bee4a595aa022423a8675d">Github</a>) | Powered by <a href="https://gohugo.io">Hugo</a>!</p>
   </footer>
   </body>
 </html>
