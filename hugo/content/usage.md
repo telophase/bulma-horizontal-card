@@ -23,6 +23,22 @@ By default, the `.card-image` element is aligned to the left. The `.card-image` 
 This is a card with a right card image.
 {{% /card %}}
 
+## Image Size
+The size of `.card-image` can be controlled by adding the classes `.is-small`, `is-normal` (default), `is-medium`, or `is-large` to the `.card-image` element.
+{{% card image-classes="is-small" %}}
+This card image is small using class `.is-small`.
+{{% /card %}}
+{{% card image-classes="is-normal" %}}
+If you do not include a image size class, the card image will be this size. You can force it with the `.is-normal` class.
+{{% /card %}}
+{{% card image-classes="is-medium" %}}
+This card image is medium using class `.is-medium`.
+{{% /card %}}
+{{% card image-classes="is-large" %}}
+This card image is large using class `.is-large`.
+{{% /card %}}
+
+
 ## Headers and Footers
 Horizontal cards fully support the use of card header (`header.card-header`) and card footer (`footer.card-footer`) elements. Depending on where they are placed inside the `.card` div element, they will render as *inline* or *block*. You can mix and match inline and block headers/footers on the same card.
 
@@ -45,7 +61,7 @@ The removal of the bottom border radius on the `.card-image` when a block footer
 To counteract this, special class `.is-radiusless-bottom` can be added to the `.card-image`. 
 
 {{% message color="info" %}}
-It is strongly recommended to add this class to all horizontal cards with block footers to ensure they display correctly on Firefox and other Gecko-powered browsers.
+It is strongly recommended to add this class to all horizontal cards with block footers to ensure they display correctly on Firefox and other derived browsers.
 {{% /message %}}
 
 {{% card outline-footer="yes" %}}
@@ -66,13 +82,11 @@ This card has an inline header and an inline footer.
 #### Special Class `.is-forced-bottom`
 If your card is too tall, the `.card-footer` may appear to float inside the card. You can add the class `.is-force-bottom` to your `.card-footer`; this will cause it to stick to the bottom of the card. However, because this uses `position: absolute;`, the forced inline card footer will ignore internal margins and may appear too close to your other `.card-content`. 
 
+The sticky effect of the class `.is-forced-bottom` is only active *after* the tablet breakpoint. It will not apply any unique styles or have a sticky effect on collapsed horizontal cards, even on forced cards with class `.is-collapsed`.
+
 See the examples below. Check card behaviour per screen size before using this class.
 
 {{% card-compare %}}
-
-{{% message color="primary" %}}
-**TO-DO**: Improve responsiveness of `.is-forced-bottom`.
-{{% /message %}}
 
 ----
 
@@ -81,7 +95,7 @@ Bulma has several [responsive image aspect ratio classes (ratio modifiers)](http
 
 By default, very long or very wide images may appear too large/small as `.card-image`. For horizontal `.card-image`s, these classes alter the apparent height without altering the image's actual dimensions (ie. no distortion).
 
-These classes can be used to manipulate the height of the `.card-image`. Simply apply these classes to the `figure.image` element inside the `.card-image` div element.
+These classes can be used to manipulate the height of the `.card-image`. Simply apply these classes to the `figure.image` element inside the `.card-image` div element. (See below)
 
 ```
 <div class="card-image">
@@ -93,9 +107,7 @@ These classes can be used to manipulate the height of the `.card-image`. Simply 
 
 {{% card-compare-imageratios %}}
 
-# Notes on Responsiveness
-Horizontal cards are based on CSS flexboxes, just like the rest of Bulma.
+# Responsiveness
+Horizontal cards are based on CSS flexboxes, just like the rest of Bulma. Horizontal cards try to follow Bulma's vertical-first philosophy, and so on smaller screens (below the tablet breakpoint) horizontal cards collapse back into "vertical" cards. 
 
-{{% message color="primary" %}}
-**TO-DO**: Fine-tune horizontal card responsiveness.
-{{% /message %}}
+Horizontal cards do not have interchangable syntax with normal cards. Dedicated CSS classes are used to maintain the different structure of horizontal cards while making them look just like normal vertical cards when collapsed. If you are using Javascript to toggle a horizontal card between vertical and horizontal orientations, **DO NOT remove the `.is-horizontal` class!**

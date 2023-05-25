@@ -4,7 +4,7 @@ title = "Customize Extension"
 
 How to customize the extension and use it in your Bulma project.
 
-## Install Bulma
+# Install Bulma
 If you don't already have Bulma installed, it should have been installed when you installed [`bulma-horizontal-card` via NPM](../install/#via-npm-for-bulma-sass) as it is a dependency.
 
 You can install Bulma manually with:
@@ -12,7 +12,7 @@ You can install Bulma manually with:
 npm i bulma
 ```
 
-## Import into your SASS/CSS
+# Import into your SASS/CSS
 After you've installed [`bulma-horizontal-card` via NPM](../install/#via-npm-for-bulma-sass) into your Bulma project directory, you can integrate it into your SCSS/SASS by adding the following line. Place this line *after* the line(s) that import Bulma (or at minimum, Bulma's `components/card.sass`)
 
 ```scss
@@ -28,7 +28,7 @@ After you've installed [`bulma-horizontal-card` via NPM](../install/#via-npm-for
 
 `bulma-horizontal-card` should now be built into your SASS and any compiled CSS from it.
 
-## Edit SASS from NPM
+# Edit SASS from NPM
 Depedening on your `NODE_ENV` settings, development dependencies for `bulma-horizontal-card` may not have been installed. Run the following code to install them explicitly. This will install Bulma and [Dart SASS](https://www.npmjs.com/package/sass).
 
 ```sh
@@ -42,9 +42,9 @@ You can find the raw SASS at `../node_modules/@telophase/bulma-horizontal-card/s
 **NOTE**: Node-SASS has been deprecated. The included scripts use Dart SASS command syntax in order to compile CSS. If you wish to use node-SASS anyway, you'll need to edit the scripts in `package.json`.
 {{% /message %}}
 
-## Variables
+# Variables
 
-### General Variables
+## General Variables
 To provide room to style or tweak horizontal cards separately from "normal" vertical cards, horizontal cards use unique variables for colors, radii, etc.
 
 By default, these are mapped to the [same variables that normal cards use](https://bulma.io/documentation/components/card/#variables) (the "Equivalent" column in this chart).
@@ -63,13 +63,16 @@ By default, these are mapped to the [same variables that normal cards use](https
 | `$hcard-content-background-color`| Card content background color. | `$card-content-background-color`| `transparent` |
 | `$hcard-content-padding` |  Padding for internal card contents. | `$card-content-padding` | `transparent` |
 | `$hcard-footer-background-color` | Background color for the card footer. | `$card-footer-background-color` | `transparent`|
-| `$hcard-footer-border-top` | Definition of the card footer top border | `$card-footer-border-top` |`1px solid $border-light`|
+| `$hcard-footer-border-top` | Definition of the card footer top border. | `$card-footer-border-top` |`1px solid $border-light`|
 | `$hcard-footer-padding` | Padding around card footers. | `$card-footer-padding` | `0.75rem` |
-| `$hcard-media-margin` | Margin around card media | `$card-media-margin` | `$block-spacing` |
+| `$hcard-media-margin` | Margin around card media. | `$card-media-margin` | `$block-spacing` |
 
-### Unique to `bulma-horizontal-card`
+## Unique to `bulma-horizontal-card`
 These variables are used by horizontal cards only and are not shared with/inherited by normal cards.
 
 | Name | Description | Default Value |
 | --- | ----------- | ---- |
-| `$hcard-image-default-size` | Width of the `.card-image` in horizontal cards | `12.5%` |
+| `$hcard-image-small-size` | Width of the `.card-image` in horizontal cards using `.is-small` | `$hcard-image-default-size * 0.5` |
+| `$hcard-image-default-size` | Width of the `.card-image` in horizontal cards without modifiers or using `.is-normal` | `12.5%` |
+| `$hcard-image-medium-size` | Width of the `.card-image` in horizontal cards using `.is-medium` | `$hcard-image-default-size * 1.5` |
+| `$hcard-image-large-size` | Width of the `.card-image` in horizontal cards using `.is-large` | `$hcard-image-default-size * 2.5` |
