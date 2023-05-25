@@ -22,11 +22,6 @@ This extension makes use of the [CSS pseudo-class `:has()`](https://developer.mo
 
 An additional utility class is included that can force the `.card-image` to be correct. See [usage](https://dev.gimon.zone/bulma-horizontal-card/~site/usage/#fix-block-footers-on-firefox-with-is-radiusless-bottom) for more information.
 
-## to do
-- [ ] Add classes for defining `.card-image` width
-- [ ] Fine-tune responsiveness of horizontal cards
-- [ ] Improve responsiveness of the sticky inline-footer
-
 ## contributing
 Contributions to this extension are always welcome, be they new code, small fixes, or edits to the documentation!
 
