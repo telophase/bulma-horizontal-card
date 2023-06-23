@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on bulma-horizontal-card Documentation</title>
-    <link>https://dev.gimon.zone/bulma-horizontal-card/~site/categories/</link>
+    <link>https://telophase.github.io/bulma-horizontal-card/categories/</link>
     <description>Recent content in Categories on bulma-horizontal-card Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://dev.gimon.zone/bulma-horizontal-card/~site/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://telophase.github.io/bulma-horizontal-card/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

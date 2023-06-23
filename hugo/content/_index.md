@@ -8,7 +8,7 @@ date = "2023-04-22"
 # bulma-horizontal-card
 {.has-text-centered}
 
-[![npm](https://img.shields.io/npm/v/@telophase/bulma-horizontal-card?logo=npm)](https://www.npmjs.com/package/@telophase/bulma-horizontal-card) [![](https://img.shields.io/npm/dependency-version/@telophase/bulma-horizontal-card/bulma?label=bulma%20version&logo=bulma)](https://www.npmjs.com/package/@telophase/bulma-horizontal-card?activeTab=dependencies) [![npm downloads](https://img.shields.io/npm/dw/@telophase/bulma-horizontal-card?logo=npm)](https://www.npmjs.com/package/@telophase/bulma-horizontal-card) ![](https://img.shields.io/github/last-commit/telophase/bulma-horizontal-card?label=last%20commit&logo=github) [![](https://img.shields.io/npm/l/@telophase/bulma-horizontal-card)](https://www.npmjs.com/package/@telophase/bulma-horizontal-card) [![support development](https://img.shields.io/static/v1?label=support&color=blueviolet&message=@%20ko-fi&logo=ko-fi)](https://ko-fi.com/gimon)
+[![npm](https://img.shields.io/npm/v/@telophase/bulma-horizontal-card?logo=npm)](https://www.npmjs.com/package/@telophase/bulma-horizontal-card) [![](https://img.shields.io/npm/dependency-version/@telophase/bulma-horizontal-card/bulma?label=bulma%20version&logo=bulma)](https://www.npmjs.com/package/@telophase/bulma-horizontal-card?activeTab=dependencies) [![npm downloads](https://img.shields.io/npm/dw/@telophase/bulma-horizontal-card?logo=npm)](https://www.npmjs.com/package/@telophase/bulma-horizontal-card) [![](https://img.shields.io/github/last-commit/telophase/bulma-horizontal-card?label=last%20commit&logo=github)](https://github.com/telophase/bulma-horizontal-card/commits/main) [![](https://img.shields.io/npm/l/@telophase/bulma-horizontal-card)](https://www.npmjs.com/package/@telophase/bulma-horizontal-card) [![support development](https://img.shields.io/static/v1?label=support&color=blueviolet&message=@%20ko-fi&logo=ko-fi)](https://ko-fi.com/gimon)
 {.has-text-centered}
 
 An extension for [Bulma CSS framework](https://github.com/jgthms/bulma)  to support responsive horizontal cards, since [the project owner is not interested in maintaining the feature](https://github.com/jgthms/bulma/pull/1596#issuecomment-429735282).  The syntax and classes of vanilla ("normal") cards are reused and preserved, so you can still use headers and footers! It is also highly customizable; horizontal cards can be styled independently of normal ones via distinct SASS variables.
@@ -21,13 +21,11 @@ This extension makes use of the [CSS pseudo-class `:has()`](https://developer.mo
 
 `:has()` is supported in Chrome, Edge, Opera, and Safari by default, and major mobile browers, but [not in Firefox without enabling a special flag](https://caniuse.com/css-has) (as of writing). It is NOT supported in any version of Internet Explorer.
 
-So, this extension includes an additional utility class that can force the `.card-image` to be correct. See [usage](usage/#fix-block-footers-on-firefox-with-is-radiusless-bottom) for more information.
+So, this extension includes an additional utility class that can force the `.card-image` to be correct. See [the usage page](usage/#fix-block-footers-on-firefox-with-is-radiusless-bottom) for more information.
 {{% /message %}}
 
 ## contributing
 Contributions to this extension are always welcome, be they new code, small fixes, or edits to the documentation!
-
-Though this project officially lives at [my OneDev instance](https://dev.gimon.zone/bulma-horizontal-card/~files) for local CI jobs, [the main mirror on Github](https://github.com/telophase/bulma-horizontal-card) accepts contributions.  Any changes are synced between the two repos via CI.
 
 Fork this project on Github and file a pull request (or simply file an issue), and I'll merge it back into main.
 

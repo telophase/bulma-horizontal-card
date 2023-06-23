@@ -18,22 +18,22 @@
   		  <aside class="menu">
  <ul class="menu-list">
  
-  <li><a href="/bulma-horizontal-card/~site/"><span class="icon-text">
+  <li><a href="/bulma-horizontal-card/"><span class="icon-text">
     
     <span>Home</span>
   </span></a></li>
   
-  <li><a href="/bulma-horizontal-card/~site/install"><span class="icon-text">
+  <li><a href="/bulma-horizontal-card/install"><span class="icon-text">
     
     <span>Installation</span>
   </span></a></li>
   
-  <li><a href="/bulma-horizontal-card/~site/usage"><span class="icon-text">
+  <li><a href="/bulma-horizontal-card/usage"><span class="icon-text">
     
     <span>How to Use</span>
   </span></a></li>
   
-  <li><a href="/bulma-horizontal-card/~site/customize"><span class="icon-text">
+  <li><a href="/bulma-horizontal-card/customize"><span class="icon-text">
     
     <span>Customize</span>
   </span></a></li>
@@ -45,15 +45,6 @@
     </span>
     
     <span>Github</span>
-  </span></a></li>
-  
-  <li><a href="https://dev.gimon.zone/bulma-horizontal-card/~files"><span class="icon-text">
-    
-    <span class="icon">
-      <i class="fa fa-git "></i>
-    </span>
-    
-    <span>Local Repo</span>
   </span></a></li>
   
  </ul>
@@ -81,7 +72,7 @@
   <ul>
     
      <li class="is-active">
-       <a aria-current="page" href="https://dev.gimon.zone/bulma-horizontal-card/~site/">Home</a>
+       <a aria-current="page" href="https://telophase.github.io/bulma-horizontal-card/">Home</a>
     </li>
   </ul>
 </nav>
@@ -89,7 +80,7 @@
 <div class="content">
 	<p class="has-text-centered"><img src="hcard.png" alt="" /></p>
 <h1 id="bulma-horizontal-card" class="has-text-centered">bulma-horizontal-card</h1>
-<p class="has-text-centered"><a href="https://www.npmjs.com/package/@telophase/bulma-horizontal-card"><img src="https://img.shields.io/npm/v/@telophase/bulma-horizontal-card?logo=npm" alt="npm" /></a> <a href="https://www.npmjs.com/package/@telophase/bulma-horizontal-card?activeTab=dependencies"><img src="https://img.shields.io/npm/dependency-version/@telophase/bulma-horizontal-card/bulma?label=bulma%20version&amp;logo=bulma" alt="" /></a> <a href="https://www.npmjs.com/package/@telophase/bulma-horizontal-card"><img src="https://img.shields.io/npm/dw/@telophase/bulma-horizontal-card?logo=npm" alt="npm downloads" /></a> <img src="https://img.shields.io/github/last-commit/telophase/bulma-horizontal-card?label=last%20commit&amp;logo=github" alt="" /> <a href="https://www.npmjs.com/package/@telophase/bulma-horizontal-card"><img src="https://img.shields.io/npm/l/@telophase/bulma-horizontal-card" alt="" /></a> <a href="https://ko-fi.com/gimon"><img src="https://img.shields.io/static/v1?label=support&amp;color=blueviolet&amp;message=@%20ko-fi&amp;logo=ko-fi" alt="support development" /></a></p>
+<p class="has-text-centered"><a href="https://www.npmjs.com/package/@telophase/bulma-horizontal-card"><img src="https://img.shields.io/npm/v/@telophase/bulma-horizontal-card?logo=npm" alt="npm" /></a> <a href="https://www.npmjs.com/package/@telophase/bulma-horizontal-card?activeTab=dependencies"><img src="https://img.shields.io/npm/dependency-version/@telophase/bulma-horizontal-card/bulma?label=bulma%20version&amp;logo=bulma" alt="" /></a> <a href="https://www.npmjs.com/package/@telophase/bulma-horizontal-card"><img src="https://img.shields.io/npm/dw/@telophase/bulma-horizontal-card?logo=npm" alt="npm downloads" /></a> <a href="https://github.com/telophase/bulma-horizontal-card/commits/main"><img src="https://img.shields.io/github/last-commit/telophase/bulma-horizontal-card?label=last%20commit&amp;logo=github" alt="" /></a> <a href="https://www.npmjs.com/package/@telophase/bulma-horizontal-card"><img src="https://img.shields.io/npm/l/@telophase/bulma-horizontal-card" alt="" /></a> <a href="https://ko-fi.com/gimon"><img src="https://img.shields.io/static/v1?label=support&amp;color=blueviolet&amp;message=@%20ko-fi&amp;logo=ko-fi" alt="support development" /></a></p>
 <p>An extension for <a href="https://github.com/jgthms/bulma">Bulma CSS framework</a>  to support responsive horizontal cards, since <a href="https://github.com/jgthms/bulma/pull/1596#issuecomment-429735282">the project owner is not interested in maintaining the feature</a>.  The syntax and classes of vanilla (&ldquo;normal&rdquo;) cards are reused and preserved, so you can still use headers and footers! It is also highly customizable; horizontal cards can be styled independently of normal ones via distinct SASS variables.</p>
 <h2 id="notices">notices</h2>
 <article class="message is-danger">
@@ -99,12 +90,11 @@
   <div class="message-body">
 		<p>This extension makes use of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:has">CSS pseudo-class <code>:has()</code></a> in order to achieve automatic/contextual control of the <code>.card-image</code>&rsquo;s <code>border-radius</code>. Specifically, it is used in a single case to control the removal of the bottom <code>border-radius</code> from the <code>.card-image</code> when a <code>footer.card-footer</code> element is present as a child of <code>.card</code>. This was the best way I could think to implement this.</p>
 <p><code>:has()</code> is supported in Chrome, Edge, Opera, and Safari by default, and major mobile browers, but <a href="https://caniuse.com/css-has">not in Firefox without enabling a special flag</a> (as of writing). It is NOT supported in any version of Internet Explorer.</p>
-<p>So, this extension includes an additional utility class that can force the <code>.card-image</code> to be correct. See <a href="usage/#fix-block-footers-on-firefox-with-is-radiusless-bottom">usage</a> for more information.</p>
+<p>So, this extension includes an additional utility class that can force the <code>.card-image</code> to be correct. See <a href="usage/#fix-block-footers-on-firefox-with-is-radiusless-bottom">the usage page</a> for more information.</p>
   </div>
 </article>
 <h2 id="contributing">contributing</h2>
 <p>Contributions to this extension are always welcome, be they new code, small fixes, or edits to the documentation!</p>
-<p>Though this project officially lives at <a href="https://dev.gimon.zone/bulma-horizontal-card/~files">my OneDev instance</a> for local CI jobs, <a href="https://github.com/telophase/bulma-horizontal-card">the main mirror on Github</a> accepts contributions.  Any changes are synced between the two repos via CI.</p>
 <p>Fork this project on Github and file a pull request (or simply file an issue), and I&rsquo;ll merge it back into main.</p>
 <h2 id="license">license</h2>
 <p>© <a href="https://gimon.zone">Alex H.</a> (<a href="https://github.com/telophase">@telophase</a>) 2023-present.<br />

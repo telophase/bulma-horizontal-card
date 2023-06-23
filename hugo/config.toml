@@ -1,4 +1,4 @@
-baseURL = 'https://dev.gimon.zone/bulma-horizontal-card/~site'
+baseURL = 'https://telophase.github.io/bulma-horizontal-card/'
 languageCode = 'en-us'
 title = 'bulma-horizontal-card Documentation'
 enableGitInfo = true
@@ -38,9 +38,4 @@ enableGitInfo = true
   name = 'Github'
   params = { fa = 'github Repo' }
   url = 'https://github.com/telophase/bulma-horizontal-card'
-  weight = 80
-[[menu.nav]]
-  name = 'Local Repo'
-  params = { fa = 'git' }
-  url = 'https://dev.gimon.zone/bulma-horizontal-card/~files'
   weight = 80
