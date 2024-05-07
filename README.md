@@ -15,6 +15,9 @@ An extension for [Bulma CSS framework](https://github.com/jgthms/bulma)  to supp
 
 **Documentation, installation instructions, and demonstrations can be found here: https://telophase.github.io/bulma-horizontal-card/**.
 
+## bulma v1
+As of Bulma version 1.0.0, this extension has not been superceeded by any new functionality and is still works as normal. I will add any new feature(s) to better integrate with any other Bulma updates going forward.
+
 ## important notice!
 This extension makes use of the [CSS pseudo-class `:has()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:has) in order to achieve automatic/contextual control of the `.card-image`'s `border-radius`. Specifically, it is used in a single case to control the removal of the bottom `border-radius` from the `.card-image` when a `footer.card-footer` element is present as a child of `.card`. This was the best way I could think to implement this.
 
@@ -28,7 +31,7 @@ Contributions to this extension are always welcome, be they new code, small fixe
 Fork this project on Github and file a pull request (or simply file an issue), and I'll merge it back into main.
 
 ## license
-&#169; [Alex H.](https://gimon.zone) ([@telophase](https://github.com/telophase)) 2023-present.<br>
+&#169; [Alex H @telophase](https://github.com/telophase) 2023-present.<br>
 MIT License.
 
 Initial code and CSS class syntax based on the work/input of contributors in [this Bulma pull request](https://github.com/jgthms/bulma/pull/1596). Thank you!
